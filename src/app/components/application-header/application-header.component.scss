@@ -90,7 +90,7 @@ ion-icon {
     position: absolute;
     top: 5px;
     left: 8px;
-    background: #e0005a;
+    background: map-get($colors, bright_red);
     color: white;
     font-size: 9px;
     padding-bottom: 3px;
