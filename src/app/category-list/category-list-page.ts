@@ -65,7 +65,9 @@ export class CategoryListPage {
         code: string
     } [];
     fromLibrary = false;
-
+    layoutConfiguration = {
+        layout: 'v3'
+    };
 
     constructor(
         @Inject('CONTENT_SERVICE') private contentService: ContentService,
@@ -102,35 +104,35 @@ export class CategoryListPage {
                 return acc;
             }, []);
         }
-        const temp = ((await this.contentService.buildContentAggregator
-        (this.formService, this.courseService, this.profileService)
-            .aggregate({
-                    interceptSearchCriteria: () => ({
-                        ...this.formField.searchCriteria,
-                        facets: this.supportedFacets,
-                        searchType: SearchType.SEARCH,
-                        limit: 100
-                    })
-                },
-                [], null, [{
-                    index: 0,
-                    title: this.formField.facet,
-                    isEnabled: true,
-                    dataSrc: {
-                        name: 'CONTENTS',
-                        aggregate: this.formField.aggregate,
-                        search: {
-                            filters: {}
-                        },
-                    },
-                    theme: {}
-                }]).toPromise()).result);
-        this.facetFilters = (temp[0].meta.filterCriteria.facetFilters).reduce((acc, f) => {
-            acc[f.name] = f.values;
-            return acc;
-        }, {});
-        this.sectionGroup = (temp[0] as ContentAggregation<'CONTENTS'>).data;
-        this.showSheenAnimation = false;
+        // const temp = ((await this.contentService.buildContentAggregator
+        // (this.formService, this.courseService, this.profileService)
+        //     .aggregate({
+        //             interceptSearchCriteria: () => ({
+        //                 ...this.formField.searchCriteria,
+        //                 facets: this.supportedFacets,
+        //                 searchType: SearchType.SEARCH,
+        //                 limit: 100
+        //             })
+        //         },
+        //         [], null, [{
+        //             index: 0,
+        //             title: this.formField.facet,
+        //             isEnabled: true,
+        //             dataSrc: {
+        //                 name: 'CONTENTS',
+        //                 aggregate: this.formField.aggregate,
+        //                 search: {
+        //                     filters: {}
+        //                 },
+        //             },
+        //             theme: {}
+        //         }]).toPromise()).result);
+        // this.facetFilters = (temp[0].meta.filterCriteria.facetFilters).reduce((acc, f) => {
+        //     acc[f.name] = f.values;
+        //     return acc;
+        // }, {});
+        // this.sectionGroup = (temp[0] as ContentAggregation<'CONTENTS'>).data;
+        // this.showSheenAnimation = false;
     }
 
     navigateToTextbookPage(items, subject) {
