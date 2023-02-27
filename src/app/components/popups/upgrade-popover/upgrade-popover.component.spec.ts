@@ -1,63 +1,43 @@
-import { UpgradePopoverComponent } from './upgrade-popover.component';
+
+import { SbPopoverComponent } from '../sb-popover/sb-popover.component';
 import { PopoverController, Platform, NavParams } from '@ionic/angular';
-import { UtilityService } from '../../../../services/utility-service';
-import { Environment, ImpressionSubtype, ImpressionType, InteractSubtype, PageId, TelemetryGeneratorService } from '@app/services';
-import { InteractType } from 'sunbird-sdk';
-import { AppVersion } from '@ionic-native/app-version/ngx';
+import { NgZone } from '@angular/core';
+import { of } from 'rxjs';
 
-describe('UpgradePopoverComponent', () => {
-    let upgradePopoverComponent: UpgradePopoverComponent;
-
-    window.cordova.plugins = {
-        InAppUpdateManager: {
-            checkForImmediateUpdate: jest.fn((fn, fn1) => {fn(); fn1()})
-        }
-    };
-
-    const mockUtilityService: Partial<UtilityService> = {
-        openPlayStore: jest.fn()
-    };
-    const mockAppVersion: Partial<AppVersion> = {
-        getAppName: jest.fn(() => Promise.resolve('some_string'))
-    };
-    const mockPopOverController: Partial<PopoverController> = {
-        dismiss: jest.fn()
-    };
-
-    const mockTelemetryGeneratorService: Partial<TelemetryGeneratorService> = {
-        generateInteractTelemetry: jest.fn(),
-        generateImpressionTelemetry: jest.fn()
-    };
-
+describe('SbPopoverComponent', () => {
+    let sbPopoverComponent: SbPopoverComponent;
     const mockNavParams: Partial<NavParams> = {
         get: jest.fn((arg) => {
             let value;
             switch (arg) {
-                case 'upgrade':
+                case 'actionsButtons':
+                    value = [
+                        {
+                            btntext: 'OKAY',
+                            btnClass: 'popover-color',
+                            btnDisabled$: of([])
+                        }
+                    ];
+                    break;
+                case 'content':
                     value = {
-                        type: 'force',
-                        optional: 'forceful',
-                        title: 'We recommend that you upgrade to the latest version of Sunbird.',
-                        desc: '',
-                        actionButtons: [
-                            {
-                                action: 'yes',
-                                label: 'Update Now',
-                                link: 'https://play.google.com/store/apps/details?id=org.sunbird.app&hl=en'
-                            },
-                            {
-                                action: 'no',
-                                label: 'Cancel'
-                            },
-                            {
-                                action: 'xyz',
-                                label: 'Cancel'
-                            }
-                        ],
-                        isOnboardingCompleted: true,
-                        minVersionCode: 13,
-                        maxVersionCode: 52,
-                        currentAppVersionCode: 23,
+                        identifier: 'identifier'
+                    };
+                    break;
+                case 'sbPopoverDynamicContent':
+                    value = of([]);
+                    break;
+                case 'sbPopoverDynamicMainTitle':
+                    value = of([]);
+                    break;
+                case 'btnDisabled':
+                    value = of([]);
+                    break;
+                case 'isChild':
+                    value = true;
+                    break;
+                case 'handler':
+                    value = () => {
                     };
                     break;
             }
@@ -65,126 +45,23 @@ describe('UpgradePopoverComponent', () => {
         })
     };
 
-    beforeAll(() => {
-        upgradePopoverComponent = new UpgradePopoverComponent(
-            mockUtilityService as UtilityService,
-            mockPopOverController as PopoverController,
-            mockNavParams as NavParams,
-            mockTelemetryGeneratorService as TelemetryGeneratorService,
-            mockAppVersion as AppVersion
-        );
-    });
-
-    beforeEach(() => {
-        jest.clearAllMocks();
-    });
-
-    it('should create a instance of UpgradePopoverComponent', () => {
-        expect(upgradePopoverComponent).toBeTruthy();
-    });
-
-    it('should close popover', () => {
-        // arrange
-        // act
-        upgradePopoverComponent.cancel();
-        // assert
-        expect(mockPopOverController.dismiss).toHaveBeenCalled();
-    });
-
-    it('should invoke openPlayStore', () => {
-        // arrange
-        upgradePopoverComponent.upgradeType.type = 'optional';
-        // act
-        upgradePopoverComponent.upgradeApp('https://play.google.com/store/apps/details?id=org.sunbird.app');
-        // assert
-        expect(mockPopOverController.dismiss).toHaveBeenCalled();
-    });
-
-    it('should invoke openPlayStore and upgradeType force', () => {
-        // arrange
-        upgradePopoverComponent.upgradeType.type = 'forced';
-        // act
-        upgradePopoverComponent.upgradeApp('https://play.google.com/store/apps/details?id=org.sunbird.app');
-        // assert
-        expect(mockPopOverController.dismiss).not.toHaveBeenCalled();
-    });
-
-    it('should generate impression and interact when popoup shows', (done) => {
-        // arrange
-        mockTelemetryGeneratorService.generateImpressionTelemetry = jest.fn();
-        mockTelemetryGeneratorService.generateInteractTelemetry = jest.fn();
-        // act
-        upgradePopoverComponent.init();
-        // assert
-        setTimeout(() => {
-            expect(mockTelemetryGeneratorService.generateImpressionTelemetry).toHaveBeenCalledWith(
-                ImpressionType.VIEW,
-                ImpressionSubtype.UPGRADE_POPUP,
-                PageId.UPGRADE_POPUP,
-                Environment.HOME
-            );
-            expect(mockTelemetryGeneratorService.generateInteractTelemetry).toHaveBeenCalledWith(
-                InteractType.OTHER,
-                InteractSubtype.FORCE_UPGRADE_INFO,
-                Environment.HOME,
-                PageId.UPGRADE_POPUP,
-                undefined,
-                {
-                    minVersionCode: 13,
-                    maxVersionCode: 52,
-                    currentAppVersionCode: 23
-                }
-            );
-            done();
-        }, 0);
-    });
-
-});
-
-
-describe('UpgradeComponent in deeplink ', () => {
-    let upgradePopoverComponent: UpgradePopoverComponent;
-    const mockUtilityService: Partial<UtilityService> = {
-        openPlayStore: jest.fn()
+    const mockPlatform: Partial<Platform> = {
     };
-    const mockAppVersion: Partial<AppVersion> = {
-        getAppName: jest.fn(() => Promise.resolve('some_string'))
+
+    const mockNgZone: Partial<NgZone> = {
+        run: jest.fn((fn) => fn()) as any
     };
+
     const mockPopOverController: Partial<PopoverController> = {
         dismiss: jest.fn()
     };
 
-    const mockTelemetryGeneratorService: Partial<TelemetryGeneratorService> = {
-        generateInteractTelemetry: jest.fn(),
-        generateImpressionTelemetry: jest.fn()
-    };
-
-    const mockNavParams: Partial<NavParams> = {
-        get: jest.fn((arg) => {
-            let value;
-            switch (arg) {
-                case 'upgrade':
-                    value = {
-                        type: 'optional',
-                        title: 'We recommend that you upgrade to the latest version of Sunbird.',
-                        desc: '',
-                        isOnboardingCompleted: false,
-                        currentAppVersionCode: 1,
-                        requiredVersionCode: 2
-                    };
-                    break;
-            }
-            return value;
-        })
-    };
-
     beforeAll(() => {
-        upgradePopoverComponent = new UpgradePopoverComponent(
-            mockUtilityService as UtilityService,
-            mockPopOverController as PopoverController,
+        sbPopoverComponent = new SbPopoverComponent(
             mockNavParams as NavParams,
-            mockTelemetryGeneratorService as TelemetryGeneratorService,
-            mockAppVersion as AppVersion
+            mockPlatform as Platform,
+            mockNgZone as NgZone,
+            mockPopOverController as PopoverController
         );
     });
 
@@ -192,137 +69,148 @@ describe('UpgradeComponent in deeplink ', () => {
         jest.clearAllMocks();
     });
 
-    it('isMandatoryUpgrade should be false when popoup shows', (done) => {
-        // arrange
-        mockTelemetryGeneratorService.generateImpressionTelemetry = jest.fn();
-        mockTelemetryGeneratorService.generateInteractTelemetry = jest.fn();
-        // act
-        upgradePopoverComponent.init();
-        // assert
-        setTimeout(() => {
-            expect(upgradePopoverComponent.isMandatoryUpgrade).toBeFalsy();
-            done();
-        }, 0);
+    it('should create a instance of SbInsufficientStoragePopupComponent', () => {
+        expect(sbPopoverComponent).toBeTruthy();
     });
 
-    it('should generate impression and interact event when init() called', (done) => {
-        // arrange
-        // act
-        upgradePopoverComponent.init();
+    it('should poulate all properties provided in navparams', () => {
+        expect(sbPopoverComponent.actionsButtons).toBeDefined();
+        expect(sbPopoverComponent.sbPopoverDynamicContent$).toBeDefined();
+        expect(sbPopoverComponent.sbPopoverDynamicMainTitle$).toBeDefined();
+    });
 
-        setTimeout(() => {
+    describe('closePopOver()', () => {
+        it('should close popover', () => {
+            // arrange
+            // act
+            sbPopoverComponent.closePopover(true);
             // assert
-            expect(mockTelemetryGeneratorService.generateImpressionTelemetry).toHaveBeenCalledWith(
-                ImpressionType.VIEW,
-                ImpressionSubtype.DEEPLINK,
-                PageId.UPGRADE_POPUP,
-                Environment.ONBOARDING
-            );
-            expect(mockTelemetryGeneratorService.generateInteractTelemetry).toHaveBeenCalledWith(
-                InteractType.OTHER,
-                InteractSubtype.OPTIONAL_UPGRADE,
-                Environment.ONBOARDING,
-                PageId.UPGRADE_POPUP,
-                undefined,
-                {
-                    currentAppVersionCode: 1,
-                    requiredVersionCode: 2
-                }
-            );
-            done();
-        }, 0);
+            expect(mockPopOverController.dismiss).toHaveBeenCalledWith({ closeDeletePopOver: true });
+        });
     });
 
-    it('should close popover', () => {
-        // arrange
-        // act
-        upgradePopoverComponent.cancel();
-        // assert
-        expect(mockPopOverController.dismiss).toHaveBeenCalled();
-    });
-
-
-});
-
-describe('UpgradeComponent in deeplink for deeplink upgrade scenario ', () => {
-    let upgradePopoverComponent: UpgradePopoverComponent;
-    const mockUtilityService: Partial<UtilityService> = {
-        openPlayStore: jest.fn()
-    };
-    const mockAppVersion: Partial<AppVersion> = {
-        getAppName: jest.fn(() => Promise.resolve('some_string'))
-    };
-    const mockPopOverController: Partial<PopoverController> = {
-        dismiss: jest.fn()
-    };
-
-    const mockTelemetryGeneratorService: Partial<TelemetryGeneratorService> = {
-        generateInteractTelemetry: jest.fn(),
-        generateImpressionTelemetry: jest.fn()
-    };
-
-    const mockNavParams: Partial<NavParams> = {
-        get: jest.fn((arg) => {
-            let value;
-            switch (arg) {
-                case 'upgrade':
-                    value = {
-                        type: 'optional',
-                        title: 'We recommend that you upgrade to the latest version of Sunbird.',
-                        desc: '',
-                        isOnboardingCompleted: false,
-                        currentAppVersionCode: 1,
-                        requiredVersionCode: 2,
-                        isFromDeeplink: true
-                    };
-                    break;
-            }
-            return value;
-        })
-    };
-
-    beforeAll(() => {
-        upgradePopoverComponent = new UpgradePopoverComponent(
-            mockUtilityService as UtilityService,
-            mockPopOverController as PopoverController,
-            mockNavParams as NavParams,
-            mockTelemetryGeneratorService as TelemetryGeneratorService,
-            mockAppVersion as AppVersion
-        );
-    });
-
-    beforeEach(() => {
-        jest.clearAllMocks();
-    });
-
-
-    it('should generate deeplink upgradeinteract event when init() called', (done) => {
-        // arrange
-        // act
-        upgradePopoverComponent.init();
-
-        setTimeout(() => {
+    describe('deleteContent()', () => {
+        it('should invoke handler method passed by navparams', async (done) => {
+            // arrange
+            const btn = {
+                isInternetNeededMessage: 'Message',
+                btntext: 'button'
+            };
+            // act
+            await sbPopoverComponent.deleteContent(true, btn);
             // assert
-            expect(mockTelemetryGeneratorService.generateImpressionTelemetry).toHaveBeenCalledWith(
-                ImpressionType.VIEW,
-                ImpressionSubtype.DEEPLINK,
-                PageId.UPGRADE_POPUP,
-                Environment.ONBOARDING
-            );
-            expect(mockTelemetryGeneratorService.generateInteractTelemetry).toHaveBeenCalledWith(
-                InteractType.OTHER,
-                InteractSubtype.DEEPLINK_UPGRADE,
-                Environment.ONBOARDING,
-                PageId.UPGRADE_POPUP,
-                undefined,
-                {
-                    currentAppVersionCode: 1,
-                    requiredVersionCode: 2
-                }
-            );
-            done();
-        }, 0);
+            setTimeout(() => {
+                done();
+            }, 0);
+        });
+
+        it('should close popover', async (done) => {
+            // arrange
+            const btn = {
+                isInternetNeededMessage: 'Message',
+                btntext: 'button'
+            };
+            const handler = jest.fn();
+            jest.spyOn(mockNavParams, 'get').mockReturnValue(handler);
+            // act
+            await sbPopoverComponent.deleteContent(false, btn);
+            // assert
+            setTimeout(() => {
+                expect(mockPopOverController.dismiss).toHaveBeenCalledWith({ canDelete: false, btn: {btntext: "button", isInternetNeededMessage: "Message"} });
+                expect(handler).toBeCalledWith(btn.btntext);
+                done();
+            }, 0);
+        });
+
+        it('should test else condition', async () => {
+            // arrange
+            jest.spyOn(mockNavParams, 'get').mockReturnValue(undefined);
+            // act
+            await sbPopoverComponent.deleteContent();
+            // assert
+        });
     });
 
+    describe('ionViewWillEnter()', () => {
+        it('should dismiss the popup when backButton is clicked', () => {
+            // arrange
+            mockPlatform.backButton = {
+                subscribeWithPriority: jest.fn((_, fn) => fn()),
+            } as any;
+
+            const unsubscribeFn = jest.fn();
+            sbPopoverComponent.backButtonFunc = {
+                unsubscribe: unsubscribeFn
+            } as any;
+            // act
+            sbPopoverComponent.ionViewWillEnter();
+            // assert
+            expect(mockPopOverController.dismiss).toHaveBeenCalled();
+            expect(unsubscribeFn).toHaveBeenCalled();
+        });
+
+        it('should not dismiss the popup when backButton is clicked', () => {
+            // arrange
+            mockPlatform.backButton = {
+                subscribeWithPriority: jest.fn((_, fn) => fn()),
+            } as any;
+            sbPopoverComponent.disableDeviceBackButton = true;
+            const unsubscribeFn = jest.fn();
+            sbPopoverComponent.backButtonFunc = {
+                unsubscribe: unsubscribeFn
+            } as any;
+            // act
+            sbPopoverComponent.ionViewWillEnter();
+            // assert
+            expect(mockPopOverController.dismiss).not.toHaveBeenCalled();
+            expect(unsubscribeFn).not.toHaveBeenCalled();
+        });
+    });
+
+    describe('ngOnDestroy()', () => {
+        it('should else cases', () => {
+            // arrange
+            const unsubscribeFn = jest.fn();
+
+            sbPopoverComponent.sbPopoverDynamicMainTitleSubscription = undefined;
+
+            sbPopoverComponent.sbPopoverDynamicButtonDisabledSubscription = undefined;
+
+            sbPopoverComponent.sbPopoverDynamicContentSubscription = undefined;
+
+            sbPopoverComponent.backButtonFunc = undefined;
+
+            // act
+            sbPopoverComponent.ngOnDestroy();
+            // assert
+            expect(unsubscribeFn).toHaveBeenCalledTimes(0);
+        });
+
+        it('should unsubscribe all subscription', () => {
+            // arrange
+            const unsubscribeFn = jest.fn();
+
+            sbPopoverComponent.sbPopoverDynamicMainTitleSubscription = {
+                unsubscribe: unsubscribeFn
+            } as any;
+
+            sbPopoverComponent.sbPopoverDynamicButtonDisabledSubscription = {
+                unsubscribe: unsubscribeFn
+            } as any;
+
+            sbPopoverComponent.sbPopoverDynamicContentSubscription = {
+                unsubscribe: unsubscribeFn
+            } as any;
+
+            sbPopoverComponent.backButtonFunc = {
+                unsubscribe: unsubscribeFn
+            } as any;
+
+            // act
+            sbPopoverComponent.ngOnDestroy();
+            // assert
+            expect(unsubscribeFn).toHaveBeenCalledTimes(4);
+        });
+    });
 
 });
