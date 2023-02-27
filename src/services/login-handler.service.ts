@@ -1,30 +1,17 @@
-import {Inject, Injectable} from '@angular/core';
-import {
-    SharedPreferences,
-    WebviewLoginSessionProvider,
-    WebviewSessionProviderConfig
-} from 'sunbird-sdk';
-
-import {
-    FormAndFrameworkUtilService,
-    CommonUtilService,
-    TelemetryGeneratorService,
-    AppGlobalService,
-    SbProgressLoader,
-    LoginNavigationHandlerService
-} from '@app/services';
-import {
-    Environment,
-    InteractSubtype,
-    InteractType,
-    PageId
-} from '@app/services/telemetry-constants';
+import { Injectable } from '@angular/core';
+import { WebviewLoginSessionProvider, WebviewSessionProviderConfig } from '@project-sunbird/sunbird-sdk';
+import { CommonUtilService } from './common-util.service';
+import { FormAndFrameworkUtilService } from './formandframeworkutil.service';
+import { TelemetryGeneratorService } from './telemetry-generator.service';
+import { SbProgressLoader } from './sb-progress-loader.service';
+import { AppGlobalService } from './app-global-service.service';
+import { LoginNavigationHandlerService } from './login-navigation-handler.service';
+import { Environment, InteractSubtype, InteractType, PageId } from '@app/services/telemetry-constants';
 
 @Injectable()
 export class LoginHandlerService {
 
     constructor(
-        @Inject('SHARED_PREFERENCES') private preferences: SharedPreferences,
         private commonUtilService: CommonUtilService,
         private formAndFrameworkUtilService: FormAndFrameworkUtilService,
         private telemetryGeneratorService: TelemetryGeneratorService,
