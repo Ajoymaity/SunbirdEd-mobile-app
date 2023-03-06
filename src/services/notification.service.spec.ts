@@ -7,7 +7,7 @@ import { FormAndFrameworkUtilService } from './formandframeworkutil.service';
 import { TelemetryService, NotificationService as SdkNotificationService, GroupService, ProfileService, ContentService } from '@project-sunbird/sunbird-sdk';
 import { Events } from '@app/util/events';
 import { TelemetryGeneratorService } from './telemetry-generator.service';
-import { Event, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { NotificationServiceV2 } from '@project-sunbird/sunbird-sdk/notification-v2/def/notification-service-v2';
 import { NavigationService } from './navigation-handler.service';
 import { of, throwError } from 'rxjs';
@@ -34,7 +34,6 @@ describe('LocalCourseService', () => {
   const mockTelemetryGeneratorService: Partial<TelemetryGeneratorService> = {
     generateInteractTelemetry: jest.fn()
   };
-  const mockSdkNotificationService: Partial<SdkNotificationService> = {};
   const mockRouter: Partial<Router> = {
     navigate: jest.fn()
   };
@@ -492,7 +491,8 @@ describe('LocalCourseService', () => {
     it('should open browser page when External url is set', () => {
       // arrange
       const data = { action: { type: 'extURL', additionalInfo:{ deepLink: 'someLink' } } };
-      spyOn(window, 'open').and.stub();
+      // jest.spyOn(window, 'open').and.stub();
+      window['open'] = jest.fn(() => Promise.resolve()) as any;
       // act
       notificationService.setNotificationParams(data);
       notificationService.handleNotification();

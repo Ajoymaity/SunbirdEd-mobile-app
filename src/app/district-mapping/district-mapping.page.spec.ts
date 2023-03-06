@@ -29,7 +29,6 @@ describe('DistrictMappingPage', () => {
     const mockHeaderService: Partial<AppHeaderService> = {
         hideHeader: jest.fn()
     };
-    const presentFn = jest.fn(() => Promise.resolve());
     const mockCommonUtilService: Partial<CommonUtilService> = {
         translateMessage: jest.fn(() => ''),
         showToast: jest.fn(),
@@ -169,9 +168,9 @@ describe('DistrictMappingPage', () => {
     });
 
     it('should unsubscribe backButton', () => {
-        beforeEach(() => {
+        // beforeEach(() => {
             window.history.pushState({ isShowBackButton: true }, '', '');
-        });
+        // });
         districtMappingPage.ionViewWillLeave();
     });
 

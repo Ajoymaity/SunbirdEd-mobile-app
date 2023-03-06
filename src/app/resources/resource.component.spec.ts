@@ -84,7 +84,8 @@ describe('ResourcesComponent', () => {
         getGuestUserType: jest.fn(),
         getCurrentUser: jest.fn(),
         isUserLoggedIn: jest.fn(),
-        showNewTabsSwitchPopup: jest.fn()
+        showNewTabsSwitchPopup: jest.fn(),
+        getNameForCodeInFramework: jest.fn()
     };
     const mockAppVersion: Partial<AppVersion> = {
         getAppName: jest.fn(() => Promise.resolve('Sunbird'))
@@ -192,6 +193,7 @@ describe('ResourcesComponent', () => {
                 }
             });
         });
+        mockProfileService.getActiveSessionProfile = jest.fn(() => of({}))
         mockEvents.subscribe = jest.fn((topic, fn) => {
             if (topic === 'savedResources:update') {
                 fn({ update: 'sample_update_result' });
@@ -243,6 +245,7 @@ describe('ResourcesComponent', () => {
                 }
             });
         });
+        mockProfileService.getActiveSessionProfile = jest.fn(() => of({}))
         mockEvents.subscribe = jest.fn((topic, fn) => {
             if (topic === 'savedResources:update') {
                 fn({ update: '' });
@@ -301,8 +304,8 @@ describe('ResourcesComponent', () => {
             subject: ['Physics', 'Mathematics']
         };
         jest.spyOn(resourcesComponent, 'getGroupByPage').mockImplementation();
-        jest.spyOn(mockTelemetryGeneratorService, 'generateStartSheenAnimationTelemetry').mockImplementation();
-        spyOn(mockframeworkService, 'getActiveChannelId').and.returnValue(of('sample_channelId'));
+        mockTelemetryGeneratorService.generateStartSheenAnimationTelemetry = jest.fn(() => Promise.resolve());
+        mockframeworkService.getActiveChannelId = jest.fn(() => of('sample_channelId'));
         mockAppGlobalService.getNameForCodeInFramework = jest.fn();
         // act
         resourcesComponent.getChannelId();
@@ -331,7 +334,7 @@ describe('ResourcesComponent', () => {
         };
         jest.spyOn(resourcesComponent, 'getGroupByPage').mockImplementation();
         jest.spyOn(mockTelemetryGeneratorService, 'generateStartSheenAnimationTelemetry').mockImplementation();
-        spyOn(mockframeworkService, 'getActiveChannelId').and.returnValue(of('sample_channelId'));
+        mockframeworkService.getActiveChannelId = jest.fn(() => of('sample_channelId'));
         mockAppGlobalService.getNameForCodeInFramework = jest.fn();
         // act
         resourcesComponent.getChannelId();
@@ -1811,7 +1814,8 @@ describe('ResourcesComponent', () => {
                 createdAt: '08.01.2020',
                 subject: ['Physics', 'Mathematics']
             }
-            mockProfileService.getActiveSessionProfile = jest.fn(() => Promise.resolve({subject: ["subject1"]}))
+            mockAppGlobalService.getNameForCodeInFramework = jest.fn()
+            mockProfileService.getActiveSessionProfile = jest.fn(() => of({subject: ["subject1"]}))
             // act
             resourcesComponent.orderBySubject(searchResults);
             // assert

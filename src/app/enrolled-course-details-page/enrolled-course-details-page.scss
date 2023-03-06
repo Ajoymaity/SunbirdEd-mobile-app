@@ -161,7 +161,7 @@
     }
 
     .toolbar-p-16{
-        padding: ($base-block-space * 2) ($base-block-space * 2) ($base-block-space / 2) ($base-block-space * 2) !important;
+      padding: ($base-block-space * 2) ($base-block-space * 2) ($base-block-space, 2) ($base-block-space * 2) !important;
     }
 
     .size_txt {

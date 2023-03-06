@@ -93,7 +93,7 @@ describe('LocalCourseService', () => {
   });
 
   describe('enrollIntoBatch', () => {
-    it('should Enrol into batch, and when the return is true', async (done) => {
+    it('should Enrol into batch, and when the return is true', async () => {
       // arrange
       const enrollCourse = {
         userId: 'sample_userid',
@@ -127,11 +127,10 @@ describe('LocalCourseService', () => {
         expect(mockTelemetryGeneratorService.generateInteractTelemetry).toHaveBeenCalled();
         expect(mockCourseService.enrollCourse).toHaveBeenCalled();
         expect(mockSbProgressLoader.hide).toHaveBeenCalledWith({ id: 'login' });
-        done();
       });
     });
 
-    it('should Enrol into batch, and when the return is true for updateConsent catchPart', async (done) => {
+    it('should Enrol into batch, and when the return is true for updateConsent catchPart', async () => {
       // arrange
       const enrollCourse = {
         userId: 'sample_userid',
@@ -165,7 +164,6 @@ describe('LocalCourseService', () => {
         expect(mockTelemetryGeneratorService.generateInteractTelemetry).toHaveBeenCalled();
         expect(mockCourseService.enrollCourse).toHaveBeenCalled();
         expect(mockSbProgressLoader.hide).toHaveBeenCalledWith({ id: 'login' });
-        done();
       });
     });
 

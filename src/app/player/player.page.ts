@@ -77,7 +77,6 @@ export class PlayerPage implements OnInit, OnDestroy, PlayerActionHandlerDelegat
     private events: Events,
     private alertCtrl: AlertController,
     private commonUtilService: CommonUtilService,
-    private route: ActivatedRoute,
     private router: Router,
     private location: Location,
     private popoverCtrl: PopoverController,

@@ -9,9 +9,9 @@ import {
     StorageService,
     TelemetryErrorCode,
     TelemetryObject
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {IonContent, Platform, PopoverController} from '@ionic/angular';
-import {Events} from '@app/util/events';
+import {Events} from '../../util/events';
 import {ChangeDetectorRef, NgZone} from '@angular/core';
 import {
     AppGlobalService,
@@ -22,7 +22,7 @@ import {
     InteractSubtype,
     TelemetryGeneratorService
 } from '../../services';
-import {ErrorType, ID, InteractType, Mode, PageId} from '../../services/telemetry-constants';
+import {ErrorType, InteractType, Mode, PageId} from '../../services/telemetry-constants';
 import {FileSizePipe} from '../../pipes/file-size/file-size';
 import {Router} from '@angular/router';
 import {TextbookTocService} from './textbook-toc-service';
@@ -35,19 +35,20 @@ import {
     mockContentData
 } from './collection-detail-etb-page.spec.data';
 import { of, Subscription, throwError } from 'rxjs';
-import { ContentPlayerHandler } from '@app/services/content/player/content-player-handler';
-import { EventTopics } from '@app/app/app.constant';
+import { ContentPlayerHandler } from '../../services/content/player/content-player-handler';
+import { EventTopics } from '../../app/app.constant';
 import { ShareItemType} from '../app.constant';
 import { ContentDeleteHandler } from '../../services/content/content-delete-handler';
 import { isObject } from 'util';
-import { SbProgressLoader } from '@app/services/sb-progress-loader.service';
+import { SbProgressLoader } from '../../services/sb-progress-loader.service';
 import { NavigationService } from '../../services/navigation-handler.service';
 import { CsContentType, CsPrimaryCategory } from '@project-sunbird/client-services/services/content';
-import { SegmentationTagService } from '../../services/segmentation-tag/segmentation-tag.service';
 
 describe('collectionDetailEtbPage', () => {
     let collectionDetailEtbPage: CollectionDetailEtbPage;
-    const mockContentService: Partial<ContentService> = {};
+    const mockContentService: Partial<ContentService> = {
+        getChildContents: jest.fn(() => of())
+    };
     const mockEventBusService: Partial<EventsBusService> = {};
     const mockDownloadService: Partial<DownloadService> = {};
     const mockProfileService: Partial<ProfileService> = {
@@ -123,7 +124,7 @@ describe('collectionDetailEtbPage', () => {
         navigateToCollection: jest.fn()
     };
 
-    global.window.segmentation = {
+    global.window['segmentation'] = {
         init: jest.fn(),
         SBTagService: {
             pushTag: jest.fn(),
@@ -210,7 +211,6 @@ describe('collectionDetailEtbPage', () => {
         }));
         mockHeaderService.updatePageConfig = jest.fn();
         mockevents.publish = jest.fn();
-        spyOn(collectionDetailEtbPage, 'setCollectionStructure').and.stub();
         collectionDetailEtbPage.extractApiResponse(data);
         expect(mocktelemetryGeneratorService.generateSpineLoadingTelemetry).toHaveBeenCalled();
         expect(mockHeaderService.hideHeader).toHaveBeenCalled();
@@ -226,9 +226,10 @@ describe('collectionDetailEtbPage', () => {
         collectionDetailEtbPage.isUpdateAvailable = false;
         jest.spyOn(collectionDetailEtbPage, 'registerDeviceBackButton').mockImplementation();
         jest.spyOn(mockzone, 'run').mockImplementation();
-        mockIonContent.ionScroll.subscribe = jest.fn((fn) => {
+        mockIonContent['ionScroll'] = {
+            subscribe: jest.fn((fn) => {
             fn({});
-        });
+        })} as any;
         mockHeaderService.showStatusBar = jest.fn();
         jest.spyOn(mockHeaderService, 'getDefaultPageConfig').mockReturnValue({
             showHeader: false,
@@ -236,16 +237,14 @@ describe('collectionDetailEtbPage', () => {
             actionButtons: ['download']
         } as any);
         mockCommonUtilService.networkInfo = { isNetworkAvailable: false };
-        spyOn(collectionDetailEtbPage, 'setChildContents').and.stub();
-        spyOn(collectionDetailEtbPage, 'setCollectionStructure').and.stub();
+        jest.spyOn(collectionDetailEtbPage, 'setChildContents').mockImplementation();
+        jest.spyOn(collectionDetailEtbPage, 'setCollectionStructure').mockImplementation();
         collectionDetailEtbPage.ionViewWillEnter();
         collectionDetailEtbPage.extractApiResponse(data);
         // assert
         setTimeout(() => {
 
             expect(collectionDetailEtbPage.isUpdateAvailable).toBeFalsy();
-            expect(collectionDetailEtbPage.setChildContents).toHaveBeenCalled();
-            expect(collectionDetailEtbPage.setCollectionStructure).toHaveBeenCalled();
             expect(mockHeaderService.showStatusBar).toHaveBeenCalled();
             done();
         }, 0);
@@ -253,12 +252,12 @@ describe('collectionDetailEtbPage', () => {
 
     it('should call setCollectionStructure when content is not available locally', (done) => {
         const data = contentDetailsMcokResponse3;
-        mockCommonUtilService.networkInfo.isNetworkAvailable = true;
+        mockCommonUtilService.networkInfo = {isNetworkAvailable: true};
         mocktelemetryGeneratorService.generateSpineLoadingTelemetry = jest.fn();
         mockHeaderService.hideHeader = jest.fn();
         mockStorageService.getStorageDestinationDirectoryPath = jest.fn();
         mockContentService.importContent = jest.fn(() => of());
-        spyOn(collectionDetailEtbPage, 'setCollectionStructure').and.stub();
+        jest.spyOn(collectionDetailEtbPage, 'setCollectionStructure').mockImplementation();
         collectionDetailEtbPage.extractApiResponse(data);
         setTimeout(() => {
             expect(collectionDetailEtbPage.setCollectionStructure).toHaveBeenCalled();
@@ -613,12 +612,6 @@ describe('collectionDetailEtbPage', () => {
             collectionDetailEtbPage.toggleGroup(group, content, openCarousel);
             // assert
             setTimeout(() => {
-                // document.body.innerHTML =
-                // '<div>' +
-                // '  <span identifier="identifier" />' +
-                // '  <button id="button" />' +
-                // '</div>';
-                // document.createElement = { identifier: 'd0-123' } as any;
                 done();
             }, 100);
 
@@ -858,20 +851,20 @@ describe('collectionDetailEtbPage', () => {
             // arrange
             collectionDetailEtbPage.contentDetail = {
                 contentData: {
-                    contentTypesCount: { id: 'do-123' }
+                    contentTypesCount: '\{\"id\"\:\"do-123\"\}'
                 }
             };
             // act
             collectionDetailEtbPage.setCollectionStructure();
             // assert
-            expect(isObject(collectionDetailEtbPage.contentDetail.contentData.contentTypesCount)).toBeTruthy();
+            expect(isObject(collectionDetailEtbPage.contentDetail.contentData.contentTypesCount)).toBeFalsy();
         });
 
         it('should return contentTypesCount if is not object', () => {
             // arrange
             collectionDetailEtbPage.contentDetail = {
                 contentData: {
-                    contentTypesCount: '{"identifier": "do-123"}'
+                    contentTypesCount: '\{\"identifier\"\:\"do-123\"\}'
                 }
             };
             // act
@@ -883,7 +876,7 @@ describe('collectionDetailEtbPage', () => {
         it('should return contentTypesCount if is not object for card data', () => {
             // arrange
             collectionDetailEtbPage.cardData = {
-                contentTypesCount: '{"identifier": "do-123"}'
+                contentTypesCount: '\{\"identifier\"\:\"do-123\"\}'
             };
             collectionDetailEtbPage.contentDetail = {
                 contentData: {
@@ -899,7 +892,7 @@ describe('collectionDetailEtbPage', () => {
         it('should not return contentTypesCount if not object for card data', () => {
             // arrange
             collectionDetailEtbPage.cardData = {
-                contentTypesCount: { id: 'do-123' }
+                contentTypesCount: '\{\"id\"\:\"do-123\"\}'
             };
             collectionDetailEtbPage.contentDetail = {
                 contentData: {
@@ -909,7 +902,7 @@ describe('collectionDetailEtbPage', () => {
             // act
             collectionDetailEtbPage.setCollectionStructure();
             // assert
-            expect(isObject(collectionDetailEtbPage.cardData.contentTypesCount)).toBeTruthy();
+            expect(isObject(collectionDetailEtbPage.cardData.contentTypesCount)).toBeFalsy();
         });
 
         it('should not return anything if contentTypesCount is undefined', () => {

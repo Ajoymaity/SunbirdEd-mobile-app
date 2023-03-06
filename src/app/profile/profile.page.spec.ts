@@ -4,10 +4,9 @@ import {
     AuthService,
     ContentService,
     CourseService,
-    FormService,
     NetworkError,
-    CertificateAlreadyDownloaded, FrameworkService
-} from 'sunbird-sdk';
+    FrameworkService
+} from '@project-sunbird/sunbird-sdk';
 import { NgZone } from '@angular/core';
 import { Router } from '@angular/router';
 import { PopoverController, ToastController, Platform } from '@ionic/angular';
@@ -25,7 +24,6 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
 import { SbProgressLoader } from '@app/services/sb-progress-loader.service';
 import { FileOpener } from '@ionic-native/file-opener/ngx';
 import { TranslateService } from '@ngx-translate/core';
-import { CertificateDownloadAsPdfService } from 'sb-svg2pdf';
 import { of, throwError } from 'rxjs';
 import { mockFormData, mockProfileData } from './profile.page.spec.data';
 import { ContentFilterConfig, RouterLinks } from '@app/app/app.constant';
@@ -34,6 +32,7 @@ import { ProfileHandler } from '../../services/profile-handler';
 import { SegmentationTagService } from '../../services/segmentation-tag/segmentation-tag.service';
 import { CertificateService } from '@project-sunbird/sunbird-sdk';
 import { LocationHandler } from '../../services/location-handler';
+import { UnnatiDataService } from '../manage-learn/core/services/unnati-data.service';
 
 describe('Profile.page', () => {
     let profilePage: ProfilePage;
@@ -61,7 +60,6 @@ describe('Profile.page', () => {
     };
     const mockContentService: Partial<ContentService> = {};
     const mockCourseService: Partial<CourseService> = {};
-    const mockFormService: Partial<FormService> = {};
     const mockNgZone: Partial<NgZone> = {
         run: jest.fn((fn) => fn())
     };
@@ -115,7 +113,6 @@ describe('Profile.page', () => {
     const mockFileOpener: Partial<FileOpener> = {};
     const mockToastController: Partial<ToastController> = {};
     const mockTranslateService: Partial<TranslateService> = {};
-    const mockCertificateDownloadPdfService: Partial<CertificateDownloadAsPdfService> = {};
     const mockFrameworkService: Partial<FrameworkService> = {
         setActiveChannelId: jest.fn(() => of(undefined))
     };
@@ -134,7 +131,9 @@ describe('Profile.page', () => {
         getCertificates: jest.fn()
     };
 
-    global.window.segmentation = {
+    const mockUnnatiDataService: Partial<UnnatiDataService> = {}
+
+    global.window['segmentation'] = {
         init: jest.fn(),
         SBTagService: {
             pushTag: jest.fn(),
@@ -153,7 +152,6 @@ describe('Profile.page', () => {
             mockAuthService as AuthService,
             mockContentService as ContentService,
             mockCourseService as CourseService,
-            mockFormService as FormService,
             mockFrameworkService as FrameworkService,
             mockCertificateService as CertificateService,
             mockNgZone as NgZone,
@@ -173,11 +171,11 @@ describe('Profile.page', () => {
             mockFileOpener as FileOpener,
             mockToastController as ToastController,
             mockTranslateService as TranslateService,
-            mockCertificateDownloadPdfService as CertificateDownloadAsPdfService,
             mockProfileHandler as ProfileHandler,
             mockSegmentationTagService as SegmentationTagService,
             mockPlatform as Platform,
-            mockLocationHandler as LocationHandler
+            mockLocationHandler as LocationHandler,
+            mockUnnatiDataService as UnnatiDataService
         );
     });
 
@@ -1009,9 +1007,7 @@ describe('Profile.page', () => {
             const values = new Map();
             values['courseId'] = 'do_1234';
             mockCommonUtilService.networkInfo = { isNetworkAvailable: false };
-            mockCertificateDownloadPdfService.download = jest.fn(() => Promise.resolve());
             jest.spyOn(profilePage, 'openpdf').mockImplementation();
-            mockCertificateDownloadPdfService.download = jest.fn(() => Promise.resolve());
             mockCourseService.certificateManager = {
                 isCertificateCached: jest.fn(() => of(true))
             };

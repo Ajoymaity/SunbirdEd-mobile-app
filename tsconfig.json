@@ -2,21 +2,21 @@
   "allowSyntheticDefaultImports": true,
   "compileOnSave": false,
   "angularCompilerOptions": {
-    "enableIvy": false,
-    "compilationMode": "partial"
+    "enableIvy": true,
+    "compilationMode": "full"
   },
   "compilerOptions": {
     "baseUrl": "./src",
     "outDir": "./dist/out-tsc",
     "sourceMap": true,
     "declaration": false,
-    "module": "es2015",
+    "module": "es2020",
     "moduleResolution": "node",
     "emitDecoratorMetadata": true,
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "importHelpers": true,
-    "target": "es5",
+    "target": "es2015",
     "skipLibCheck": true,
     "types": [
       "node",

@@ -22,7 +22,7 @@ import { GooglePlus } from '@ionic-native/google-plus/ngx';
 import { PreferenceKey } from '../app/app.constant';
 
 jest.mock('@project-sunbird/sunbird-sdk', () => {
-    const actual = require.requireActual('@project-sunbird/sunbird-sdk');
+    const actual = jest.requireActual('@project-sunbird/sunbird-sdk');
     return {
         ...actual,
         WebviewStateSessionProvider() {
@@ -35,7 +35,7 @@ jest.mock('@project-sunbird/sunbird-sdk', () => {
 });
 
 jest.mock('@app/app/module.service', () => {
-    const actual = require.requireActual('@app/app/module.service');
+    const actual = jest.requireActual('@app/app/module.service');
     return {
         ...actual,
         initTabs: jest.fn().mockImplementation(() => {

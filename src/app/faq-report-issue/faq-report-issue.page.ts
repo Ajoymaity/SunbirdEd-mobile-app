@@ -107,7 +107,6 @@ export class FaqReportIssuePage implements OnInit, OnDestroy {
     @Inject('PROFILE_SERVICE') private profileService: ProfileService,
     @Inject('CONTENT_SERVICE') private contentService: ContentService,
     @Inject('DEVICE_INFO') private deviceInfo: DeviceInfo,
-    @Inject('FRAMEWORK_SERVICE') private frameworkService: FrameworkService,
     @Inject('FRAMEWORK_UTIL_SERVICE') private frameworkUtilService: FrameworkUtilService,
     @Inject('TELEMETRY_SERVICE') private telemetryService: TelemetryService,
     private telemetryGeneratorService: TelemetryGeneratorService,

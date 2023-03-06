@@ -30,7 +30,6 @@ import { Location } from '@angular/common';
 import { Environment, ActivePageService, TelemetryGeneratorService,
   FormAndFrameworkUtilService, InteractSubtype, PageId, } from '@app/services';
 import { SbProgressLoader } from '@app/services/sb-progress-loader.service';
-import { ProfileHandler } from '@app/services/profile-handler';
 import { SegmentationTagService, TagPrefixConstants } from '@app/services/segmentation-tag/segmentation-tag.service';
 import { CategoriesEditService } from './categories-edit.service';
 
@@ -136,7 +135,6 @@ export class CategoriesEditPage implements OnInit, OnDestroy {
     private platform: Platform,
     private activePageService: ActivePageService,
     private sbProgressLoader: SbProgressLoader,
-    private profileHandler: ProfileHandler,
     private segmentationTagService: SegmentationTagService,
     private categoriesEditService: CategoriesEditService,
     private telemetryGeneratorService: TelemetryGeneratorService,

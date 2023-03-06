@@ -38,7 +38,6 @@ import {
   CourseCertificate,
   CertificateAlreadyDownloaded,
   NetworkError,
-  FormService,
   FrameworkService,
   ProfileType,
   Batch,
@@ -83,7 +82,7 @@ import { FrameworkCategory } from '@project-sunbird/client-services/models/chann
 import { LocationHandler } from '@app/services/location-handler';
 import { urlConstants } from '../manage-learn/core/constants/urlConstants';
 import { UnnatiDataService } from '../manage-learn/core/services/unnati-data.service';
-import { statusType } from '../manage-learn/core';
+import { statusType } from '../manage-learn/core/constants/statuses.constant';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.page.html',
@@ -166,7 +165,6 @@ export class ProfilePage implements OnInit {
     @Inject('AUTH_SERVICE') private authService: AuthService,
     @Inject('CONTENT_SERVICE') private contentService: ContentService,
     @Inject('COURSE_SERVICE') private courseService: CourseService,
-    @Inject('FORM_SERVICE') private formService: FormService,
     @Inject('FRAMEWORK_SERVICE') private frameworkService: FrameworkService,
     @Inject('CERTIFICATE_SERVICE') private certificateService: CertificateService,
     private zone: NgZone,
@@ -186,7 +184,6 @@ export class ProfilePage implements OnInit {
     private fileOpener: FileOpener,
     private toastController: ToastController,
     private translate: TranslateService,
-    private certificateDownloadAsPdfService: CertificateDownloadAsPdfService,
     private profileHandler: ProfileHandler,
     private segmentationTagService: SegmentationTagService,
     private platform: Platform,
@@ -265,7 +262,7 @@ export class ProfilePage implements OnInit {
     }
     return this.refreshProfileData(refresher)
       .then(() => {
-        return new Promise((resolve) => {
+        return new Promise<void>((resolve) => {
           setTimeout(async () => {
             this.events.publish('refresh:profile');
             this.refresh = false;
@@ -361,7 +358,7 @@ export class ProfilePage implements OnInit {
                     that.getOrgDetails();
                     that.isCustodianOrgId = (that.profile.rootOrg.rootOrgId === this.custodianOrgId);
                     that.isStateValidated = that.profile.stateValidated;
-                    resolve();
+                    resolve(true);
                   });
                   if(profileData && profileData.framework && Object.keys(profileData.framework).length == 0) {
                     await this.getFrameworkDetails();

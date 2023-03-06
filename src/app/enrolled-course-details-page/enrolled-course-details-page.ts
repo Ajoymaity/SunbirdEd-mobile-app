@@ -1210,7 +1210,7 @@ export class EnrolledCourseDetailsPage implements OnInit, OnDestroy, ConsentPopo
               if (contentStatusData.contentList.length) {
                 const statusData = contentStatusData.contentList.find(c => c.contentId === eachContent.identifier);
                 if (statusData) {
-                  return !(statusData.status === 0 || statusData.status === 1);
+                  return !(statusData.status === 1);
                 }
                 return false;
               }
@@ -2325,7 +2325,7 @@ export class EnrolledCourseDetailsPage implements OnInit, OnDestroy, ConsentPopo
       this.nextContent = courseHeirarchy;
       this.isFirstContent = true;
     }
-    if ((result && (result.status === 0 || result.status === 1))
+    if ((result && (result.status === 1))
       || (!result && courseHeirarchy.mimeType !== MimeType.COLLECTION)) {
       this.nextContent = courseHeirarchy;
       this.isNextContentFound = true;
