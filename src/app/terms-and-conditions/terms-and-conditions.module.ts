@@ -24,7 +24,6 @@ const routes: Routes = [
     RouterModule.forChild(routes)
   ],
   declarations: [TermsAndConditionsPage],
-  entryComponents: [TermsAndConditionsPage],
   exports: [TermsAndConditionsPage]
 })
 export class TermsAndConditionsPageModule {}

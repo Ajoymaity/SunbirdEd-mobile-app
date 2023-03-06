@@ -34,8 +34,6 @@ const routes: Routes = [
     CommonConsumptionModule,
   ],
   declarations: [EnrolledCourseDetailsPage],
-  entryComponents: [ContentActionsComponent],
-  providers: [DatePipe , TextbookTocService]
-
+    providers: [DatePipe, TextbookTocService]
 })
 export class EnrolledCourseDetailsPagePageModule { }

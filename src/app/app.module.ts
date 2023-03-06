@@ -452,7 +452,6 @@ export const sunbirdSdkFactory =
 declare const sbutility;
 @NgModule({
   declarations: [AppComponent],
-  entryComponents: [PageFilterPage, PageFilterOptionsPage],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
@@ -472,7 +471,6 @@ declare const sbutility;
       // autoFocusAssist: false
     }),
     DirectivesModule,
-
     // custom modules=
     UserTypeSelectionPageModule,
     PageFilterPageModule,

@@ -50,7 +50,6 @@ const routes: Routes = [
     ComponentsModule
   ],
   declarations: [DownloadManagerPage,
-    NoDownloadsComponent, DownloadsTabComponent, DownloadsHeaderComponent],
-  entryComponents: [OverflowMenuComponent]
+    NoDownloadsComponent, DownloadsTabComponent, DownloadsHeaderComponent]
 })
 export class DownloadManagerPageModule { }

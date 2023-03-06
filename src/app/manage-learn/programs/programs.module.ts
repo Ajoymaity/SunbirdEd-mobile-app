@@ -31,7 +31,6 @@ const routes: Routes = [
     IonicModule,
     FormsModule,
     CoreModule,
-  ],
-  entryComponents:[]
+  ]
 })
 export class ProgramsModule {}

@@ -32,10 +32,8 @@ const routes: Routes = [
     ComponentsModule,
     CommonConsumptionModule
   ],
-  entryComponents: [],
   declarations: [
     SearchPage
-  ],
-
+  ]
 })
 export class SearchPageModule {}

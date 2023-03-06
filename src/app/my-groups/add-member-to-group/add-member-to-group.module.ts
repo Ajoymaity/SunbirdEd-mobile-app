@@ -31,7 +31,6 @@ const routes: Routes = [
     RecaptchaModule,
     RecaptchaFormsModule
   ],
-  declarations: [AddMemberToGroupPage],
-  entryComponents: [OverflowMenuComponent]
+  declarations: [AddMemberToGroupPage]
 })
 export class AddMemberToGroupPageModule {}

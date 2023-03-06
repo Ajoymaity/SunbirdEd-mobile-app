@@ -31,7 +31,6 @@ const routes: Routes = [
     RouterModule.forChild(routes),
   ],
   declarations: [ChapterDetailsPage],
-  entryComponents: [ContentActionsComponent],
   providers: [DatePipe]
 })
 export class ChapterDetailsPageModule {}

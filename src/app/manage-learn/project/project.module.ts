@@ -80,12 +80,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  declarations: [ProjectListingComponent, ProjectEditPage, 
-    ProjectOperationPage, LearningResourcesPage, SyncPage, TaskViewPage, 
-    LinkLearningResourcesComponent, AddEntityComponent, AddProgramsComponent, CreateProjectPage, 
-    CategorySelectComponent,ProjectTemplatePage, ItemListHeaderComponent, ProjectDetailsComponent, AddFilePage],
-  entryComponents: [LinkLearningResourcesComponent, AddEntityComponent, 
-    AddProgramsComponent, CategorySelectComponent],
+  declarations: [ProjectListingComponent, ProjectEditPage,
+    ProjectOperationPage, LearningResourcesPage, SyncPage, TaskViewPage,
+    LinkLearningResourcesComponent, AddEntityComponent, AddProgramsComponent, CreateProjectPage,
+    CategorySelectComponent, ProjectTemplatePage, ItemListHeaderComponent, ProjectDetailsComponent, AddFilePage],
   imports: [
     CommonModule,
     FormsModule,
@@ -93,7 +91,7 @@ const routes: Routes = [
     IonicModule,
     CoreModule,
     SharedModule,
-    TranslateModule.forChild(), 
+    TranslateModule.forChild(),
     RouterModule.forChild(routes),
     CommonConsumptionModule,
     PipesModule

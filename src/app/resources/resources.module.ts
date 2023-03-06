@@ -10,14 +10,14 @@ import { ResourcesRoutingModule } from './resources-routing.module';
 import { ResourcesComponent } from './resources.component';
 
 @NgModule({
-  declarations: [
+declarations: [
     ResourcesComponent
-  ],
-  imports: [
+],
+imports: [
     CommonModule,
     IonicModule.forRoot({
-      scrollPadding: false,
-      scrollAssist: true,
+    scrollPadding: false,
+    scrollAssist: true,
     }),
     TranslateModule.forChild(),
     ResourcesRoutingModule,
@@ -25,10 +25,9 @@ import { ResourcesComponent } from './resources.component';
     DirectivesModule,
     ReactiveFormsModule,
     CommonConsumptionModule
-  ],
-  exports: [
+],
+exports: [
     ResourcesComponent
-  ],
-  entryComponents: []
+]
 })
 export class ResourcesModule { }

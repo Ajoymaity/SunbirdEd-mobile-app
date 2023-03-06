@@ -133,7 +133,6 @@ import { EntitySearchPipe } from './pipe/entity-local-search';
     EntitySearchLocalComponent,
     StartImprovementComponent
   ],
-
   imports: [CommonModule, FormsModule, IonicModule, ReactiveFormsModule, TranslateModule, ChartsModule],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   exports: [
@@ -203,34 +202,12 @@ import { EntitySearchPipe } from './pipe/entity-local-search';
     Diagnostic,
     Media,
     CommonModule,
-    HttpClientModule, 
+    HttpClientModule,
     ReactiveFormsModule,
     ThemeService,
     SurveyProviderService,
     GenericPopUpService,
     HTTP
-  ],
-  entryComponents: [
-    EntityfilterComponent,
-    PopoverComponent,
-    CreateTaskComponent,
-    ReportModalFilter,
-    DownloadShareComponent,
-    FilterModalComponent,
-    SubmissionActionsComponent,
-    ViewDetailComponent,
-    HintComponent,
-    SurveyMsgComponent,
-    CreateTaskFormComponent,
-    RemarksModalComponent,
-    PrivacyPolicyAndTCComponent,
-    ProjectMetadataCardComponent,
-    ProjectTaskListComponent,
-    AddLinkModalComponent,
-    ReportListComponent,
-    EntitySearchLocalComponent,
-    StartImprovementComponent
-  ],
-  
+  ]
 })
 export class SharedModule {}

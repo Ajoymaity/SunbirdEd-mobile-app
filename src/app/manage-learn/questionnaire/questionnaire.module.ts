@@ -32,7 +32,6 @@ const routes: Routes = [
   declarations: [QuestionnairePage, MatrixModalComponent, QuestionMapModalComponent],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
-  ],
-  entryComponents: [MatrixModalComponent, QuestionMapModalComponent]
+  ]
 })
 export class QuestionnairePageModule { }

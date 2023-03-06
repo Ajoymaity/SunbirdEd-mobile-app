@@ -43,7 +43,6 @@ const routes: Routes = [
     PipesModule
   ],
   exports: [GroupDetailsPage],
-  providers: [ViewMoreActivityDelegateService],
-  entryComponents: [OverflowMenuComponent]
+  providers: [ViewMoreActivityDelegateService]
 })
 export class GroupDetailsPageModule {}

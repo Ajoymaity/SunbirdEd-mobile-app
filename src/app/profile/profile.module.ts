@@ -31,7 +31,6 @@ const routes: Routes = [
     PipesModule,
     CertificateDirectivesModule
   ],
-  declarations: [ProfilePage],
-  entryComponents: []
+  declarations: [ProfilePage]
 })
 export class ProfilePageModule { }
