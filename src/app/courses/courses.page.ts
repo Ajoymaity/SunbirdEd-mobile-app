@@ -27,7 +27,7 @@ import {
   FrameworkService, FrameworkUtilService, GetFrameworkCategoryTermsRequest, NetworkError, PageAssembleCriteria, PageName,
   Profile, ProfileService, SharedPreferences,
   SortOrder, TelemetryObject
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {
   BatchConstants, ContentCard,
   ContentFilterConfig, EventTopics,

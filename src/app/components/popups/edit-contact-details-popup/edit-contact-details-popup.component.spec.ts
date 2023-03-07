@@ -2,7 +2,7 @@ import { EditContactDetailsPopupComponent } from './edit-contact-details-popup.c
 import { CommonUtilService } from '../../../../services';
 import { PopoverController, Platform, NavParams, MenuController } from '@ionic/angular';
 import { of, throwError } from 'rxjs';
-import { ProfileService } from 'sunbird-sdk';
+import { ProfileService } from '@project-sunbird/sunbird-sdk';
 import { FormBuilder } from '@angular/forms';
 import { Keyboard } from '@ionic-native/keyboard/ngx';
 

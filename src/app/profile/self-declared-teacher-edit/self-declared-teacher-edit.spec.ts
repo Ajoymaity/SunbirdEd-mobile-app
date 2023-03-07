@@ -1,6 +1,6 @@
 import {of, throwError} from 'rxjs';
 import {SelfDeclaredTeacherEditPage} from './self-declared-teacher-edit.page';
-import {Consent, ProfileService, SharedPreferences, UpdateConsentResponse} from 'sunbird-sdk';
+import {Consent, ProfileService, SharedPreferences, UpdateConsentResponse} from '@project-sunbird/sunbird-sdk';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Platform, PopoverController} from '@ionic/angular';
 import {Events} from '@app/util/events';

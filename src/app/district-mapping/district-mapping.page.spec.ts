@@ -14,7 +14,7 @@ import { of, throwError } from 'rxjs';
 import {
     ProfileService, Profile, SharedPreferences, ProfileType, ProfileSource, DeviceRegisterResponse,
     DeviceRegisterService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { PreferenceKey } from '@app/app/app.constant';
 import { FormLocationFactory } from '../../services/form-location-factory/form-location-factory';
 import { LocationHandler } from '../../services/location-handler';

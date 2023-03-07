@@ -2,7 +2,7 @@ import { ImpressionSubtype } from './../../services/telemetry-constants';
 import { Component, OnInit } from '@angular/core';
 import { Platform } from '@ionic/angular';
 import { Location } from '@angular/common';
-import { Notification, UserFeedStatus } from 'sunbird-sdk';
+import { Notification, UserFeedStatus } from '@project-sunbird/sunbird-sdk';
 import {  Subscription } from 'rxjs';
 
 import { AppHeaderService } from '@app/services/app-header.service';

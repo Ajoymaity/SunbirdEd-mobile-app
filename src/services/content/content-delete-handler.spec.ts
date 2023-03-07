@@ -3,7 +3,7 @@ import { TelemetryGeneratorService, CommonUtilService } from '../../services';
 import { InteractSubtype, Environment, PageId, ImpressionType, InteractType } from '@app/services/telemetry-constants';
 import { FileSizePipe } from '../../pipes/file-size/file-size';
 import { of, throwError } from 'rxjs';
-import { ContentService, Content, TelemetryObject } from 'sunbird-sdk';
+import { ContentService, Content, TelemetryObject } from '@project-sunbird/sunbird-sdk';
 import { PopoverController } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { ContentInfo } from './content-info';

@@ -12,7 +12,7 @@ import { WebView } from '@ionic-native/ionic-webview/ngx';
 import {
     SharedPreferences, ProfileService, Profile, ProfileType,
     CorrelationData, CachedItemRequestSourceFrom, LocationSearchCriteria, TelemetryService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {
     PreferenceKey, ProfileConstants, RouterLinks,
     appLanguages, Location as loc, MaxAttempt, SwitchableTabsConfig

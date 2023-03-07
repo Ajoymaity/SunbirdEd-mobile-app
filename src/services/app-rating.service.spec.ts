@@ -1,5 +1,5 @@
 import { AppRatingService } from './app-rating.service';
-import { SharedPreferences } from 'sunbird-sdk';
+import { SharedPreferences } from '@project-sunbird/sunbird-sdk';
 import { File } from '@ionic-native/file/ngx';
 import { PreferenceKey, StoreRating } from '../app/app.constant';
 import { of } from 'rxjs';

@@ -2,7 +2,7 @@ import { UserTypeSelectionPage } from './user-type-selection';
 import {
     ProfileService,
     SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Platform } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { Router, ActivatedRoute, NavigationExtras } from '@angular/router';

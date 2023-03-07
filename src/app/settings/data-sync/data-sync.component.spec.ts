@@ -8,7 +8,7 @@ import {
     TelemetryAutoSyncModes,
     TelemetryService,
     TelemetrySyncStat
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {ChangeDetectorRef, NgZone} from '@angular/core';
 import {SocialSharing} from '@ionic-native/social-sharing/ngx';
 import {

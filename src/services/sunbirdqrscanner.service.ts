@@ -12,7 +12,7 @@ import { AppVersion } from '@ionic-native/app-version/ngx';
 import { ModalController, Platform } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { take } from 'rxjs/operators';
-import { CorrelationData, Profile, ProfileType, TelemetryObject } from 'sunbird-sdk';
+import { CorrelationData, Profile, ProfileType, TelemetryObject } from '@project-sunbird/sunbird-sdk';
 import { AndroidPermission, AndroidPermissionsStatus, PermissionAskedEnum } from './android-permissions/android-permission';
 import {
   CorReleationDataType, Environment,

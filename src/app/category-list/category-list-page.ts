@@ -24,8 +24,8 @@ import {
     SearchType,
     CorrelationData,
     Profile
-} from 'sunbird-sdk';
-import { AggregatorConfigField, ContentAggregation } from 'sunbird-sdk/content/handlers/content-aggregator';
+} from '@project-sunbird/sunbird-sdk';
+import { AggregatorConfigField, ContentAggregation } from '@project-sunbird/sunbird-sdk/content/handlers/content-aggregator';
 import { ContentUtil } from '@app/util/content-util';
 import { ProfileConstants, RouterLinks } from '@app/app/app.constant';
 import { NavigationService } from '@app/services/navigation-handler.service';

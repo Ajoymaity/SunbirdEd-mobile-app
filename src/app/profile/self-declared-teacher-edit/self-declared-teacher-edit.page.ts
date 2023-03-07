@@ -15,14 +15,14 @@ import { FormValidationAsyncFactory } from '@app/services/form-validation-async-
 import { Platform, PopoverController } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { ConsentStatus } from '@project-sunbird/client-services/models';
-import { FieldConfig } from 'common-form-elements';
+import { FieldConfig } from '@project-sunbird/common-form-elements-v9';
 import { Subscription } from 'rxjs';
 import {
   AuditState,
   Consent, CorrelationData, LocationSearchResult, ProfileService,
   ServerProfile, SharedPreferences,
   TelemetryObject, FrameworkService, OrganizationSearchCriteria
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { PreferenceKey, ProfileConstants } from '../../../app/app.constant';
 
 @Component({

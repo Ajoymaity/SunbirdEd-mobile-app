@@ -1,15 +1,18 @@
 import { Router, ActivatedRoute } from '@angular/router';
-import { AppHeaderService, CommonUtilService } from '@app/services';
+import { AppHeaderService } from '../../../../services/app-header.service';
+import { CommonUtilService } from '../../../../services/common-util.service';
 import { of, throwError } from 'rxjs';
 import { Location } from '@angular/common';
 import { UnnatiDataService } from '../../core/services/unnati-data.service';
-import { LoaderService, UtilsService, ToastService } from "../../core";
+import { LoaderService } from "../../core/services/loader/loader.service";
+import { UtilsService } from "../../core/services/utils.service";
+import { ToastService } from "../../core/services/toast/toast.service";
 import { DbService } from '../../core/services/db.service';
 import { Platform, PopoverController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { SyncService } from '../../core/services/sync.service';
 import { KendraApiService } from '../../core/services/kendra-api.service';
-import { GenericPopUpService } from '../../shared';
+import { GenericPopUpService } from '../../shared/generic.popup';
 import { ProjectListingComponent } from './project-listing.component'
 
 describe('ProjectListingComponent', () => {

@@ -1,6 +1,6 @@
 import { ContentPlayerHandler } from '../../../services/content/player/content-player-handler';
 import {TelemetryGeneratorService, CommonUtilService, AppHeaderService, UtilityService} from '../../../services';
-import { PlayerService, CourseService } from 'sunbird-sdk';
+import { PlayerService, CourseService } from '@project-sunbird/sunbird-sdk';
 import { File } from '@ionic-native/file/ngx';
 import { CanvasPlayerService } from '../../canvas-player.service';
 import { Router } from '@angular/router';

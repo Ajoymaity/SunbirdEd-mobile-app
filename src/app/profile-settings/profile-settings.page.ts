@@ -29,7 +29,7 @@ import {
   ProfileService,
   ProfileType,
   CorrelationData,
-  AuditState} from 'sunbird-sdk';
+  AuditState} from '@project-sunbird/sunbird-sdk';
 import {
   AppGlobalService,
   AppHeaderService,
@@ -38,7 +38,7 @@ import {
   OnboardingConfigurationService,
   SunbirdQRScanner,
   TelemetryGeneratorService
-} from 'services';
+} from '../../services';
 import { AlertController, Platform } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { Location } from '@angular/common';

@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { NavigationExtras, Router } from '@angular/router';
 import { AppGlobalService, AppHeaderService, CommonUtilService } from '@app/services';
-import { ProfileService } from 'sunbird-sdk';
+import { ProfileService } from '@project-sunbird/sunbird-sdk';
 import { RouterLinks } from '../../app.constant';
 import { Location } from '@angular/common';
 

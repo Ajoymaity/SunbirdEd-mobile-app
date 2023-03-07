@@ -11,7 +11,7 @@ import {
     SharedPreferences,
     SystemSettingsService,
     FaqService    
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { TelemetryGeneratorService } from '@app/services/telemetry-generator.service';
 import { CommonUtilService } from '@app/services/common-util.service';
 import { AppGlobalService } from '@app/services/app-global-service.service';

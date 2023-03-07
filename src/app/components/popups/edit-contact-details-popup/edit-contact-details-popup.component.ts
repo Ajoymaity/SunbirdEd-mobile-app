@@ -1,6 +1,6 @@
 import { Component, Inject, Input } from '@angular/core';
 import { Platform, NavParams, PopoverController, MenuController } from '@ionic/angular';
-import { GenerateOtpRequest, IsProfileAlreadyInUseRequest, ProfileService } from 'sunbird-sdk';
+import { GenerateOtpRequest, IsProfileAlreadyInUseRequest, ProfileService } from '@project-sunbird/sunbird-sdk';
 import { ProfileConstants } from '@app/app/app.constant';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonUtilService } from '../../../../services/common-util.service';

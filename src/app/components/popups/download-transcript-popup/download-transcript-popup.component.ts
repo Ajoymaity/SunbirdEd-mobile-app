@@ -3,7 +3,7 @@ import { AndroidPermission, AndroidPermissionsStatus } from '@app/services/andro
 import { CommonUtilService } from '@app/services/common-util.service';
 import { Environment, InteractSubtype, PageId } from '@app/services/telemetry-constants';
 import { PopoverController,Platform, } from '@ionic/angular';
-import { ContentService, InteractType } from 'sunbird-sdk';
+import { ContentService, InteractType } from '@project-sunbird/sunbird-sdk';
 import { TelemetryGeneratorService } from '@app/services/telemetry-generator.service';
 import { AppGlobalService } from '@app/services/app-global-service.service';
 import { AndroidPermissionsService } from '@app/services/android-permissions/android-permissions.service';

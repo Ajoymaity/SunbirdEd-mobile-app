@@ -8,7 +8,7 @@ import {
   SharedPreferences,
   ProfileType,
   ProfileSource
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { AppGlobalService } from './app-global-service.service';
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { TranslateService } from '@ngx-translate/core';

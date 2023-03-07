@@ -20,7 +20,7 @@ import {
   TelemetrySyncStat,
   CorrelationData,
   LogLevel
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {
   Environment,
   InteractType,

@@ -20,7 +20,7 @@ import {
     PageId
 } from './telemetry-constants';
 import {AndroidPermission, PermissionAskedEnum} from '@app/services/android-permissions/android-permission';
-import {Profile, ProfileType} from 'sunbird-sdk';
+import {Profile, ProfileType} from '@project-sunbird/sunbird-sdk';
 
 describe('SunbirdQRScanner', () => {
     let sunbirdQRScanner: SunbirdQRScanner;

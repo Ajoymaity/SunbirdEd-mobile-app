@@ -9,7 +9,7 @@ import { Platform, PopoverController, ToastController } from '@ionic/angular';
 import { CourseCertificate } from '@project-sunbird/client-services/models';
 import { tap } from 'rxjs/operators';
 import { CertificateDownloadService } from 'sb-svg2pdf';
-import { CertificateService, InteractType } from 'sunbird-sdk';
+import { CertificateService, InteractType } from '@project-sunbird/sunbird-sdk';
 import { Location } from '@angular/common';
 import { UnnatiDataService } from '@app/app/manage-learn/core/services/unnati-data.service';
 declare var cordova;

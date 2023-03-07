@@ -1,5 +1,5 @@
 import { LanguageSettingsPage } from './language-settings';
-import { SharedPreferences } from 'sunbird-sdk';
+import { SharedPreferences } from '@project-sunbird/sunbird-sdk';
 import { TranslateService } from '@ngx-translate/core';
 import { Platform } from '@ionic/angular';
 import { Events } from '@app/util/events';

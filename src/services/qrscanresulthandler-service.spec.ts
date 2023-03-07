@@ -1,6 +1,6 @@
 import { QRScannerResultHandler } from './qrscanresulthandler.service';
 import { TelemetryService, Mode, ContentService,
-   FrameworkService, PageAssembleService, SharedPreferences, CertificateService } from 'sunbird-sdk';
+   FrameworkService, PageAssembleService, SharedPreferences, CertificateService } from '@project-sunbird/sunbird-sdk';
 import {
   Environment, ImpressionSubtype, ImpressionType, InteractSubtype, InteractType, ObjectType, PageId,
   CorReleationDataType, CorrelationData

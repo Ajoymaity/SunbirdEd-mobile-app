@@ -1,7 +1,7 @@
 import { LogoutHandlerService } from './logout-handler.service';
 import {
     AuthService, ProfileService, SharedPreferences, ProfileType, InteractType, SystemSettingsService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Events } from '@app/util/events';
 import { ContainerService } from '../container.services';
 import { Router } from '@angular/router';

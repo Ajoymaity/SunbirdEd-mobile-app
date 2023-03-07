@@ -19,7 +19,7 @@ import {
     SharedPreferences,
     NativeAppleSessionProvider,
     NativeKeycloakSessionProvider
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {Router} from '@angular/router';
 import {SbProgressLoader} from '@app/services/sb-progress-loader.service';
 import {LoginNavigationHandlerService} from '@app/services/login-navigation-handler.service';
@@ -33,7 +33,7 @@ import {
     ASAuthorizationAppleIDRequest
 } from '@ionic-native/sign-in-with-apple/ngx';
 import { Platform } from '@ionic/angular';
-import { FieldConfig } from 'common-form-elements';
+import { FieldConfig } from '@project-sunbird/common-form-elements-v9';
 
 @Component({
     selector: 'app-sign-in',

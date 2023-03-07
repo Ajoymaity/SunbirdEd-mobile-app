@@ -20,7 +20,7 @@ import {
   FrameworkCategoryCode,
   SharedPreferences,
   InteractType
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { CommonUtilService } from '@app/services/common-util.service';
 import { AppGlobalService } from '@app/services/app-global-service.service';
 import { AppHeaderService } from '@app/services/app-header.service';

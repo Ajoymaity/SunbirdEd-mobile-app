@@ -3,7 +3,7 @@ import { ActivatedRouteSnapshot, NavigationExtras, Resolve, Router } from '@angu
 import { OnboardingScreenType, PreferenceKey } from '@app/app/app.constant';
 import { OnboardingConfigurationService } from '@app/services/onboarding-configuration.service';
 import { SplashScreenService } from '@app/services/splash-screen.service';
-import { SharedPreferences } from 'sunbird-sdk';
+import { SharedPreferences } from '@project-sunbird/sunbird-sdk';
 
 @Injectable()
 export class HasNotSelectedLanguageGuard implements Resolve<any> {

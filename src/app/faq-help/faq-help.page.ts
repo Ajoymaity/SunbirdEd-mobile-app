@@ -16,7 +16,7 @@ import {
   FaqService,
   GetFaqRequest,
   CorrelationData,
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { PreferenceKey, appLanguages, RouterLinks } from '../app.constant';
 import { Location } from '@angular/common';
 import { AppVersion } from '@ionic-native/app-version/ngx';

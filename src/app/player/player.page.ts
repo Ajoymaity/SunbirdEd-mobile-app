@@ -24,7 +24,7 @@ import {
   ErrorType, SunbirdSdk, ProfileService, ContentService,
   PlayerService,
   SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Environment, FormAndFrameworkUtilService, InteractSubtype, PageId, TelemetryGeneratorService } from '@app/services';
 import { SbSharePopupComponent } from '../components/popups/sb-share-popup/sb-share-popup.component';
 import { DownloadPdfService } from '@app/services/download-pdf/download-pdf.service';

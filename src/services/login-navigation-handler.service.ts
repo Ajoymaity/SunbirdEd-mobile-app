@@ -11,7 +11,7 @@ import {
     ProfileSource,
     SignInError,
     SystemSettingsService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { initTabs, LOGIN_TEACHER_TABS } from '@app/app/module.service';
 import { Inject, Injectable, NgZone } from '@angular/core';
 import { Events } from '@app/util/events';

@@ -24,7 +24,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CsContentType } from '@project-sunbird/client-services/services/content';
 import { QuestionCursor } from '@project-sunbird/sunbird-quml-player-v9';
 // app dependencies like directive, sdk, services etc
-import { SunbirdSdk } from 'sunbird-sdk';
+import { SunbirdSdk } from '@project-sunbird/sunbird-sdk';
 import { QumlPlayerService } from '@app/services/quml-player/quml-player.service';
 import { DirectivesModule } from '../directives/directives.module';
 import {
@@ -79,7 +79,7 @@ import { RouteReuseStrategy } from '@angular/router';
 import { CrashAnalyticsErrorLogger } from '@app/services/crash-analytics/crash-analytics-error-logger';
 import { PrintPdfService } from '@app/services/print-pdf/print-pdf.service';
 import {UpdateProfileService} from '@app/services/update-profile-service';
-import { SbSearchFilterModule } from 'common-form-elements';
+import { SbSearchFilterModule } from '@project-sunbird/common-form-elements-v9';
 import {LoginNavigationHandlerService} from '@app/services/login-navigation-handler.service';
 import { StoragePermissionHandlerService } from '@app/services/storage-permission/storage-permission-handler.service';
 import { TranslateJsonPipe } from '@app/pipes/translate-json/translate-json';

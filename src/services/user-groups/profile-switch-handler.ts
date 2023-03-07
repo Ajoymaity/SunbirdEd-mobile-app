@@ -1,7 +1,7 @@
 import { Router } from '@angular/router';
 import { Injectable, Inject } from '@angular/core';
 import { Events } from '@app/util/events';
-import { ProfileType, SharedPreferences, AuthService } from 'sunbird-sdk';
+import { ProfileType, SharedPreferences, AuthService } from '@project-sunbird/sunbird-sdk';
 
 import { PreferenceKey, RouterLinks } from '@app/app/app.constant';
 import { initTabs, GUEST_STUDENT_TABS, GUEST_TEACHER_TABS } from '@app/app/module.service';

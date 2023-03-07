@@ -7,7 +7,7 @@ import {
   ProfileService,
   AuthService,
   CachedItemRequestSourceFrom
-} from "sunbird-sdk";
+} from "@project-sunbird/sunbird-sdk";
 import { ProfileConstants, RouterLinks } from "@app/app/app.constant";
 import { CommonUtilService } from "@app/services/common-util.service";
 import { KendraApiService } from "./kendra-api.service";

@@ -1,5 +1,5 @@
 import {ContentActionsComponent} from '@app/app/components';
-import {AuthService, ContentDeleteStatus, ContentService} from 'sunbird-sdk';
+import {AuthService, ContentDeleteStatus, ContentService} from '@project-sunbird/sunbird-sdk';
 import {NavParams, Platform, PopoverController, ToastController} from '@ionic/angular';
 import {Events} from '@app/util/events';
 import {TranslateService} from '@ngx-translate/core';

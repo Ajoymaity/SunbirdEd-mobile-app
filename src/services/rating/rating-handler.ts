@@ -1,7 +1,7 @@
 import { Inject, Injectable } from '@angular/core';
 import * as  dayjs from 'dayjs';
 import { File } from '@ionic-native/file/ngx';
-import { SharedPreferences, Content, CorrelationData, Rollup, TelemetryObject } from 'sunbird-sdk';
+import { SharedPreferences, Content, CorrelationData, Rollup, TelemetryObject } from '@project-sunbird/sunbird-sdk';
 
 import { CommonUtilService } from '@app/services/common-util.service';
 import { TelemetryGeneratorService } from '@app/services/telemetry-generator.service';

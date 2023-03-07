@@ -12,7 +12,7 @@ import {
     TelemetryService, NotificationService, DebuggingService,
     CodePushExperimentService, SystemSettingsService, DeviceRegisterService,
     TelemetryAutoSyncService, SunbirdSdk, CorrelationData, ProfileService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Platform, MenuController } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { StatusBar } from '@ionic-native/status-bar/ngx';

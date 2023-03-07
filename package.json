@@ -350,10 +350,10 @@
       "@project-sunbird/common-consumption/*": [
         "<rootDir>/node_modules/@project-sunbird/common-consumption/*"
       ],
-      "common-form-elements": [
+      "@project-sunbird/common-form-elements-v9": [
         "<rootDir>/node_modules/@project-sunbird/common-form-elements-v9"
       ],
-      "common-form-elements/*": [
+      "@project-sunbird/common-form-elements-v9/*": [
         "<rootDir>/node_modules/@project-sunbird/common-form-elements-v9/*"
       ]
     },

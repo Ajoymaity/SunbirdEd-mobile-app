@@ -1,15 +1,17 @@
 import { ActivatedRoute, Router } from '@angular/router';
 import { AlertController, ModalController, Platform } from '@ionic/angular';
-import { AppHeaderService, CommonUtilService } from '../../../../services';
-import { LoaderService, LocalStorageService, ToastService, UtilsService } from '../../core';
+import { AppHeaderService } from '../../../../services/app-header.service';
+import { CommonUtilService } from '../../../../services/common-util.service';
+import { LoaderService } from '../../core/services/loader/loader.service';
+import { LocalStorageService } from '../../core/services/local-storage/local-storage.service';
+import { ToastService } from '../../core/services/toast/toast.service';
+import { UtilsService } from '../../core/services/utils.service';
 import { AssessmentApiService } from '../../core/services/assessment-api.service';
 import { ObservationDetailComponent } from './observation-detail.component';
 import { Location } from '@angular/common';
 import { of, throwError } from 'rxjs';
 import { DhitiApiService } from '../../core/services/dhiti-api.service';
-import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
-import { EventEmitter } from '@angular/core';
-import { EntityfilterComponent } from '../../shared/components/entityfilter/entityfilter.component';
+import { TranslateService } from '@ngx-translate/core';
 import { ObservationService } from '../observation.service';
 describe('ObservationHomeComponent', () => {
   let observationDetailComponent: ObservationDetailComponent;

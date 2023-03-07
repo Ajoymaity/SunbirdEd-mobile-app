@@ -10,7 +10,7 @@ import {
   CachedItemRequestSourceFrom, Profile, ProfileService,
   ProfileType, ServerProfile, ServerProfileDetailsRequest,
   SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { AppGlobalService } from '../app-global-service.service';
 import { CommonUtilService } from '../common-util.service';
 import { ConsentService } from '../consent-service';

@@ -4,7 +4,7 @@ import { ModalController } from '@ionic/angular';
 import { ApiService } from './api.service';
 import { urlConstants } from '../constants/urlConstants';
 import { ToastService } from './toast/toast.service';
-import { AuthService, DeviceInfo,SharedPreferences } from 'sunbird-sdk';
+import { AuthService, DeviceInfo,SharedPreferences } from '@project-sunbird/sunbird-sdk';
 import { ApiUtilsService } from './api-utils.service';
 import { UtilityService } from '@app/services/utility-service';
 import { HTTP } from '@ionic-native/http/ngx';

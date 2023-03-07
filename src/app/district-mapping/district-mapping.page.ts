@@ -18,7 +18,7 @@ import { TelemetryGeneratorService } from '@app/services/telemetry-generator.ser
 import { Platform } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { Location as SbLocation } from '@project-sunbird/client-services/models/location';
-import { FieldConfig } from 'common-form-elements';
+import { FieldConfig } from '@project-sunbird/common-form-elements-v9';
 import { concat, defer, of, Subscription } from 'rxjs';
 import { delay, distinctUntilChanged, filter, mergeMap, pairwise, take, tap } from 'rxjs/operators';
 import {
@@ -26,7 +26,7 @@ import {
   DeviceRegisterService,
   FormRequest, LocationSearchResult, Profile, ProfileService,
   SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { LocationConfig, PreferenceKey, ProfileConstants, RegexPatterns, RouterLinks } from '../../app/app.constant';
 import { FormConstants } from '../form.constants';
 import {ProfileType} from '@project-sunbird/sunbird-sdk';

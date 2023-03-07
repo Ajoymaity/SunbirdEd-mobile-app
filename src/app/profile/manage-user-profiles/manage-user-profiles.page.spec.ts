@@ -2,7 +2,7 @@ import { ManageUserProfilesPage } from './manage-user-profiles.page';
 import {
   ProfileService,
   SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Router } from '@angular/router';
 import { AppHeaderService } from '../../../services/app-header.service';
 import { CommonUtilService } from '../../../services/common-util.service';

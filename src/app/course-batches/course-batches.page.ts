@@ -14,7 +14,7 @@ import {
   Batch,
   CorrelationData, Rollup, SharedPreferences,
   TelemetryObject
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { EventTopics } from '../../app/app.constant';
 import { AppHeaderService } from '../../services/app-header.service';
 import { CommonUtilService } from '../../services/common-util.service';

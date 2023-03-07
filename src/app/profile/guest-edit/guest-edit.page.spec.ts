@@ -7,7 +7,7 @@ import {
     FrameworkCategoryCodesGroup,
     GetSuggestedFrameworksRequest,
     SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { TranslateService } from '@ngx-translate/core';
 import { Events } from '@app/util/events';
 import { Router, ActivatedRoute } from '@angular/router';

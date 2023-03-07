@@ -11,7 +11,7 @@ import { AppHeaderService, CommonUtilService } from "@app/services";
 import { DbService } from "../../core/services/db.service";
 import { AttachmentService, ToastService } from "../../core";
 import { GenericPopUpService } from '../../shared';
-import { ContentDetailRequest, Content, ContentService } from 'sunbird-sdk';
+import { ContentDetailRequest, Content, ContentService } from '@project-sunbird/sunbird-sdk';
 import { NavigationService } from '@app/services/navigation-handler.service';
 import { RouterLinks } from "@app/app/app.constant";
 

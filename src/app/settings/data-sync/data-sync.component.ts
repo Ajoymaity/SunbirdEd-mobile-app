@@ -13,7 +13,7 @@ import { map, tap } from 'rxjs/operators';
 import {
   ArchiveObjectType, ArchiveService,
   ObjectNotFoundError, TelemetryAutoSyncModes, TelemetryImpressionRequest, TelemetryService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 
 declare const cordova;
 

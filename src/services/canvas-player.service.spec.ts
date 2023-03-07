@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Events } from '@app/util/events';
 import { of } from 'rxjs';
 import * as X2JS from 'x2js';
-import { ContentFeedbackService, ContentService, ProfileService, SunbirdSdk, TelemetryService } from 'sunbird-sdk';
+import { ContentFeedbackService, ContentService, ProfileService, SunbirdSdk, TelemetryService } from '@project-sunbird/sunbird-sdk';
 import { CourseService, SharedPreferences } from '@project-sunbird/sunbird-sdk';
 import { PreferenceKey } from '../app/app.constant';
 import { LocalCourseService } from './local-course.service';

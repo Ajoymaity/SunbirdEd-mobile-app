@@ -13,7 +13,7 @@ import {
   EventsBusService,
   StorageService,
   StorageDestination
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Location } from '@angular/common';
 import { AppHeaderService, CommonUtilService, TelemetryGeneratorService } from '../../services/index';
 import { SbNoNetworkPopupComponent } from '../components/popups/sb-no-network-popup/sb-no-network-popup.component';

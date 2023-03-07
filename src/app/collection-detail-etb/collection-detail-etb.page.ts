@@ -51,7 +51,7 @@ import {
   StorageService,
   TelemetryErrorCode,
   TelemetryObject
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { EventTopics, RouterLinks, ShareItemType } from '../../app/app.constant';
 import {
   AppGlobalService, AppHeaderService, CommonUtilService,

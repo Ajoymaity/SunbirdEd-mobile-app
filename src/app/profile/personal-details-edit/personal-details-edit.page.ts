@@ -4,7 +4,7 @@ import { Component, Inject, OnInit, ChangeDetectorRef } from '@angular/core';
 import { Events } from '@app/util/events';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Location as loc } from '../../app.constant';
-import { LocationSearchCriteria, ProfileService } from 'sunbird-sdk';
+import { LocationSearchCriteria, ProfileService } from '@project-sunbird/sunbird-sdk';
 import { Location } from '@angular/common';
 
 @Component({

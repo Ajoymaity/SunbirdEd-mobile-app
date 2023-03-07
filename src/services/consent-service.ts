@@ -1,5 +1,5 @@
 import { Inject, Injectable } from '@angular/core';
-import { Consent, ProfileService } from 'sunbird-sdk';
+import { Consent, ProfileService } from '@project-sunbird/sunbird-sdk';
 import { ConsentPiiPopupComponent } from '@app/app/components/popups/consent-pii-popup/consent-pii-popup.component';
 import { PopoverController } from '@ionic/angular';
 import { ConsentStatus, UserDeclarationOperation } from '@project-sunbird/client-services/models';

@@ -12,7 +12,7 @@ import {
   FrameworkCategoryCodesGroup,
   FrameworkUtilService,
   CorrelationData
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { ExploreConstants, RouterLinks, Search } from '@app/app/app.constant';
 import { Router } from '@angular/router';
 import { ContentUtil } from '@app/util/content-util';

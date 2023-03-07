@@ -1,5 +1,5 @@
 import { Component, Input, EventEmitter, Output, OnInit, OnDestroy } from '@angular/core';
-import { UtilsService } from '@app/app/manage-learn/core';
+import { UtilsService } from '@app/app/manage-learn/core/services/utils.service';
 
 @Component({
   selector: 'app-page-questions',

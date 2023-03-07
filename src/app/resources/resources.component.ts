@@ -67,7 +67,7 @@ import {
   SearchType,
   SharedPreferences,
   SortOrder
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { animationGrowInTopRight } from '../animations/animation-grow-in-top-right';
 import { animationShrinkOutTopRight } from '../animations/animation-shrink-out-top-right';
 import {

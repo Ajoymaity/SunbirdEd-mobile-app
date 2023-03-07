@@ -7,7 +7,7 @@ import {
   NetworkError,
   HttpClientError,
   HttpServerError
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { CommonUtilService } from './common-util.service';
 import { Events } from '@app/util/events';
 import { AppGlobalService } from './app-global-service.service';

@@ -21,7 +21,7 @@ import {
   EventsBusEvent, DownloadEventType, EventsBusService, ContentImportRequest, ContentService,
   ContentImportResponse, ContentImportStatus, ContentEventType, ContentImportCompleted,
   ContentUpdate, ContentImport, Rollup, AuditState, ProfileService, CourseBatchesRequest
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { EnrollCourse } from '@app/app/enrolled-course-details-page/course.interface';
 import { DatePipe, Location } from '@angular/common';
 import { ContentActionsComponent } from './../../components/content-actions/content-actions.component';

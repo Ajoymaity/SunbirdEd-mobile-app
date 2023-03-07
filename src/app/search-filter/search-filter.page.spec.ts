@@ -1,7 +1,7 @@
 import { SearchFilterPage } from './search-filter.page';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ModalController } from '@ionic/angular';
-import { ContentService } from 'sunbird-sdk';
+import { ContentService } from '@project-sunbird/sunbird-sdk';
 import { CommonUtilService } from '@app/services';
 import { FilterFormConfigMapper } from '@app/app/search-filter/filter-form-config-mapper';
 import { Location } from '@angular/common';

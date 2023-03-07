@@ -21,7 +21,7 @@ import {
     WebviewSessionProviderConfig,
     SignInError,
     FrameworkCategoryCode,
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 
 import { ContentFilterConfig, PreferenceKey, SystemSettingsIds, PrimaryCategory } from '@app/app/app.constant';
 import { map } from 'rxjs/operators';

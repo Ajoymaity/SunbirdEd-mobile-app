@@ -3,7 +3,7 @@ import {
   ContentService, StorageService, ContentExportRequest,
   ContentExportResponse, Content, Rollup,
   CorrelationData, TelemetryObject,
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { CommonUtilService } from '../common-util.service';
 import { InteractSubtype, InteractType, Environment } from '../telemetry-constants';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';

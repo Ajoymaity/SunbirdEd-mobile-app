@@ -1,5 +1,5 @@
 import { TncUpdateHandlerService } from "./tnc-update-handler.service";
-import { ProfileService, AuthService, CachedItemRequestSourceFrom,OAuthSession, ServerProfileDetailsRequest, ServerProfile, RootOrg, Profile, ProfileType, ProfileSource } from "sunbird-sdk";
+import { ProfileService, AuthService, CachedItemRequestSourceFrom,OAuthSession, ServerProfileDetailsRequest, ServerProfile, RootOrg, Profile, ProfileType, ProfileSource } from "@project-sunbird/sunbird-sdk";
 import { of, throwError } from "rxjs";
 import { CommonUtilService } from "../common-util.service";
 import { FormAndFrameworkUtilService } from "../formandframeworkutil.service";

@@ -6,7 +6,7 @@ import {
     EventNamespace, EventsBusService, NotificationService as PushNotificationService,
     Profile, ProfileService, ProfileType,
     ServerProfile, SharedPreferences
-  } from 'sunbird-sdk';
+  } from '@project-sunbird/sunbird-sdk';
 import { MenuController, Platform, PopoverController } from "@ionic/angular";
 import { ActivePageService, AppGlobalService, AppHeaderService, CommonUtilService, CorReleationDataType, Environment, ID, InteractSubtype, InteractType, NotificationService, PageId, TelemetryGeneratorService, UtilityService } from "../../../services";
 import { Events } from "../../../../src/util/events";

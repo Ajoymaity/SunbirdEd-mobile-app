@@ -1,6 +1,6 @@
 import { Platform, PopoverController } from '@ionic/angular';
 import { DownloadTranscriptPopupComponent } from './download-transcript-popup.component';
-import { ContentService } from 'sunbird-sdk';
+import { ContentService } from '@project-sunbird/sunbird-sdk';
 import { CommonUtilService } from '@app/services/common-util.service';
 import {
   AndroidPermissionsService,

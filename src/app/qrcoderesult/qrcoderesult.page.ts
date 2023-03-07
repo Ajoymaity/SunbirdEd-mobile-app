@@ -39,7 +39,7 @@ import {
   ProfileService,
   AuditState,
   TrackingEnabled
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Subscription } from 'rxjs';
 import {
   Environment, ImpressionType, InteractSubtype, InteractType,

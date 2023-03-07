@@ -31,7 +31,7 @@ import {
   ProfileType,
   SharedPreferences,
   UpdateServerProfileInfoRequest
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { ExternalIdVerificationService } from '@app/services/externalid-verification.service';
 
 @Component({

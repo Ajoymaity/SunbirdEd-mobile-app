@@ -10,7 +10,7 @@ import { AssessmentApiService } from '../../core/services/assessment-api.service
 import { KendraApiService } from '../../core/services/kendra-api.service';
 import { Location } from '@angular/common';
 import { AppGlobalService, CommonUtilService } from '@app/services';
-import { SharedPreferences } from 'sunbird-sdk';
+import { SharedPreferences } from '@project-sunbird/sunbird-sdk';
 
 @Component({
   selector: 'app-deeplink-redirect',

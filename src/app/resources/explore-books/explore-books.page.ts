@@ -4,8 +4,8 @@ import {
   ViewChild, ViewChildren, OnInit
 } from '@angular/core';
 import { Platform, ModalController } from '@ionic/angular';
-import { MimeType, Search, ExploreConstants } from 'app/app.constant';
-import { Map } from 'app/telemetryutil';
+import { MimeType, Search, ExploreConstants } from '../../../app/app.constant';
+import { Map } from '../../../app/telemetryutil';
 import {
   Environment,
   ImpressionSubtype,
@@ -14,7 +14,7 @@ import {
   InteractType,
   PageId,
   CorReleationDataType
-} from 'services/telemetry-constants';
+} from '../../../services/telemetry-constants';
 import {
   ContentSearchCriteria,
   ContentSearchFilter,
@@ -23,7 +23,7 @@ import {
   CorrelationData,
   FilterValue,
   SearchType
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { LibraryCardTypes } from '@project-sunbird/common-consumption';
 import { AppGlobalService, AppHeaderService, CommonUtilService, TelemetryGeneratorService } from '@app/services';
 import { animate, group, state, style, transition, trigger } from '@angular/animations';

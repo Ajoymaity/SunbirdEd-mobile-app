@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ContentUtil} from '@app/util/content-util';
-import {ContentData, CorrelationData, LicenseDetails, Rollup, TelemetryObject} from 'sunbird-sdk';
+import {ContentData, CorrelationData, LicenseDetails, Rollup, TelemetryObject} from '@project-sunbird/sunbird-sdk';
 import {CommonUtilService, ID, InteractType, PageId, TelemetryGeneratorService} from '@app/services';
 
 @Component({

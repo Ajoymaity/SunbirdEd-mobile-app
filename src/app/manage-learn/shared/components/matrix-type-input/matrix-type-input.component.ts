@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { UtilsService } from '@app/app/manage-learn/core';
+import { UtilsService } from '@app/app/manage-learn/core/services/utils.service';
 import { MatrixModalComponent } from '@app/app/manage-learn/questionnaire/matrix-modal/matrix-modal.component';
 import { AlertController, ModalController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';

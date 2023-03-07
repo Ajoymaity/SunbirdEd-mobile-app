@@ -2,10 +2,10 @@ import {Component, Inject, Input, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Location, TitleCasePipe} from '@angular/common';
 import {ModalController} from '@ionic/angular';
-import {ContentService, ContentSearchCriteria, ContentSearchResult, SearchType, ContentSearchFilter} from 'sunbird-sdk';
+import {ContentService, ContentSearchCriteria, ContentSearchResult, SearchType, ContentSearchFilter} from '@project-sunbird/sunbird-sdk';
 import {FilterFormConfigMapper} from '@app/app/search-filter/filter-form-config-mapper';
 import {CommonUtilService, Environment, FormAndFrameworkUtilService, InteractSubtype, InteractType, PageId, SearchFilterService, TelemetryGeneratorService} from '@app/services';
-import {FieldConfig, IFacetFilterFieldTemplateConfig, SbSearchFacetFilterComponent} from 'common-form-elements';
+import {FieldConfig, IFacetFilterFieldTemplateConfig, SbSearchFacetFilterComponent} from '@project-sunbird/common-form-elements-v9';
 
 @Component({
     selector: 'app-search-filter.page',

@@ -8,8 +8,8 @@ import { Platform, PopoverController, ToastController } from '@ionic/angular';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable, Subscription } from 'rxjs';
 import { catchError, finalize, map, mergeMap, tap } from 'rxjs/operators';
-import { AppHeaderService, CommonUtilService, FormAndFrameworkUtilService, TelemetryGeneratorService, UtilityService } from 'services';
-import { Environment, ImpressionType, InteractSubtype, InteractType, PageId } from 'services/telemetry-constants';
+import { AppHeaderService, CommonUtilService, FormAndFrameworkUtilService, TelemetryGeneratorService, UtilityService } from '../../services';
+import { Environment, ImpressionType, InteractSubtype, InteractType, PageId } from '../../services/telemetry-constants';
 import {
   ApiService, AuthService,
   DebuggingService,
@@ -18,7 +18,7 @@ import {
   TelemetryImpressionRequest,
   WebviewManualMergeSessionProvider,
   WebviewSessionProviderConfig
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { PreferenceKey, RouterLinks } from '../app.constant';
 import { Events } from '@app/util/events';
 

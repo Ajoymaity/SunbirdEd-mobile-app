@@ -15,7 +15,7 @@ import {
     DeviceSpecification,
     Actor,
     TelemetrySummaryRequest
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {Map} from '../app/telemetryutil';
 import {
     Environment, ImpressionType, InteractSubtype, InteractType,

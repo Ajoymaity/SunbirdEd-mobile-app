@@ -1,7 +1,7 @@
 import { AppVersion } from '@ionic-native/app-version/ngx';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import {CommonUtilService, UtilityService, TelemetryGeneratorService, AndroidPermissionsService, AppGlobalService} from '../../../../services';
-import { DeviceInfo } from 'sunbird-sdk';
+import { DeviceInfo } from '@project-sunbird/sunbird-sdk';
 import { SbAppSharePopupComponent } from '@app/app/components/popups';
 import {PopoverController, Platform, NavParams, ToastController} from '@ionic/angular';
 import { ImpressionType, PageId, Environment, ID, InteractType, InteractSubtype } from '@app/services';

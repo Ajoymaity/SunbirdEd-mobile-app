@@ -9,7 +9,7 @@ import { TelemetryGeneratorService } from '@app/services/telemetry-generator.ser
 import { ContentUtil } from '@app/util/content-util';
 import { PopoverController } from '@ionic/angular';
 import { Events } from '@app/util/events';
-import { Content, ContentDelete, CorrelationData, InteractType, TelemetryObject } from 'sunbird-sdk';
+import { Content, ContentDelete, CorrelationData, InteractType, TelemetryObject } from '@project-sunbird/sunbird-sdk';
 import { ActionButtonType, CorReleationDataType, Environment, InteractSubtype, PageId } from '../../../services/telemetry-constants';
 import { SbGenericPopoverComponent } from '../../components/popups/sb-generic-popover/sb-generic-popover.component';
 import { EmitedContents } from '../download-manager.interface';

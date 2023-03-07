@@ -31,7 +31,7 @@ import {
   Profile, ProfileService, ProfileType, SharedPreferences,
   SunbirdSdk, DebuggingService,
   SystemSettings, SystemSettingsService, TelemetryAutoSyncService, TelemetryService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {
   AppGlobalService,
   AppHeaderService, AppRatingService, CommonUtilService,

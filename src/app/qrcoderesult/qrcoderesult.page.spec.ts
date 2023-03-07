@@ -11,7 +11,7 @@ import {
     PlayerService,
     DownloadEventType,
     ContentEventType
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {TranslateService} from '@ngx-translate/core';
 import {Platform, NavController} from '@ionic/angular';
 import {Events} from '@app/util/events';

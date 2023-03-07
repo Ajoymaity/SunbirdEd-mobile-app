@@ -5,7 +5,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {
   GroupService, GroupCreateRequest, GroupMembershipType,
   UpdateByIdRequest, CorrelationData
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { CommonUtilService } from '@app/services/common-util.service';
 import { AppHeaderService } from '@app/services/app-header.service';
 import { Location } from '@angular/common';

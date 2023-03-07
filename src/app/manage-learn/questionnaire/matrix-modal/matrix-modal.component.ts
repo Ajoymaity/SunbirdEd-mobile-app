@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ModalController } from '@ionic/angular';
-import { UtilsService } from '../../core';
+import { UtilsService } from '../../core/services/utils.service';
 
 @Component({
   selector: 'app-matrix-modal',

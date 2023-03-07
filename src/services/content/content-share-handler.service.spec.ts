@@ -2,7 +2,7 @@ import { of, throwError } from 'rxjs';
 import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import {
     ContentService, StorageService, Content
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {
     ContentShareHandlerService, CommonUtilService,
     TelemetryGeneratorService

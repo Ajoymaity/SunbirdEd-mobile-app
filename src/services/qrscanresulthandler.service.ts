@@ -11,7 +11,7 @@ import {
   TelemetryService,
   SharedPreferences,
   CertificateService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { EventTopics, RouterLinks, PreferenceKey } from '../app/app.constant';
 
 import { CommonUtilService } from './common-util.service';

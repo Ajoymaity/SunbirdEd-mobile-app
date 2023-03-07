@@ -14,13 +14,13 @@ import {
   StorageService,
   StorageTransferProgress,
   StorageVolume
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { SbPopoverComponent } from '@app/app/components/popups';
 import { FileSizePipe } from '../../pipes/file-size/file-size';
 import { ImpressionType, Environment, PageId, InteractType, InteractSubtype, } from '@app/services/telemetry-constants';
 import { AppVersion } from '@ionic-native/app-version/ngx';
-import { AndroidPermissionsService } from 'services/android-permissions/android-permissions.service';
-import { AndroidPermission, AndroidPermissionsStatus } from 'services/android-permissions/android-permission';
+import { AndroidPermissionsService } from '../../services/android-permissions/android-permissions.service';
+import { AndroidPermission, AndroidPermissionsStatus } from '../../services/android-permissions/android-permission';
 import { Location } from '@angular/common';
 import { featureIdMap } from '../feature-id-map';
 import { mergeMap, map, filter , takeWhile, take, startWith, tap} from 'rxjs/operators';

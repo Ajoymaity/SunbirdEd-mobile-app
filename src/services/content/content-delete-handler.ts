@@ -2,7 +2,7 @@ import { Injectable, Inject } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { Subject } from 'rxjs';
-import { ContentService, InteractType, Content, ContentDeleteStatus } from 'sunbird-sdk';
+import { ContentService, InteractType, Content, ContentDeleteStatus } from '@project-sunbird/sunbird-sdk';
 
 import { TelemetryGeneratorService } from '@app/services/telemetry-generator.service';
 import { InteractSubtype, Environment, PageId, ImpressionType } from '@app/services/telemetry-constants';

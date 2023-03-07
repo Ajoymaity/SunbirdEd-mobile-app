@@ -26,7 +26,7 @@ import {
     PageAssembleService,
     ProfileType,
     SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { of, throwError } from 'rxjs';
 import { BatchConstants, ContentCard, PageName } from '../app.constant';
 import { SbProgressLoader } from '../../services/sb-progress-loader.service';

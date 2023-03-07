@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { LoaderService, ToastService } from '../../core';
 import { DbService } from '../../core/services/db.service';
 import { UtilsService } from '../../core/services/utils.service';
-import { ContentDetailRequest, Content, ContentService } from 'sunbird-sdk';
+import { ContentDetailRequest, Content, ContentService } from '@project-sunbird/sunbird-sdk';
 import { NavigationService } from '@app/services/navigation-handler.service';
 import { Location } from '@angular/common';
 import { Subscription } from 'rxjs';

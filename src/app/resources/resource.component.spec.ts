@@ -15,7 +15,7 @@ import {
     ProfileType,
     SearchType,
     SharedPreferences,
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {EventsBusServiceImpl} from 'sunbird-sdk/events-bus/impl/events-bus-service-impl';
 import {ContentServiceImpl} from 'sunbird-sdk/content/impl/content-service-impl';
 import {ChangeDetectorRef, NgZone} from '@angular/core';

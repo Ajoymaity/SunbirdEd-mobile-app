@@ -10,7 +10,7 @@ import {
   SystemSettingsService,
   SharedPreferences,
   CorrelationData
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { Location } from '@angular/common';
 import { Router } from '@angular/router';
 import { Platform, PopoverController } from '@ionic/angular';

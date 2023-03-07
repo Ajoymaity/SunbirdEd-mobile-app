@@ -37,7 +37,7 @@ import {
   Rollup,
   FetchEnrolledCourseRequest,
   CourseService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { SplashscreenActionHandlerDelegate } from './splashscreen-action-handler-delegate';
 import { MimeType, EventTopics, RouterLinks, LaunchType } from '../../app/app.constant';
 import { AppGlobalService } from '../app-global-service.service';

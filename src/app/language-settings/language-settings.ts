@@ -16,7 +16,7 @@ import { Platform } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { TranslateService } from '@ngx-translate/core';
 import { Subscription } from 'rxjs';
-import { AuditState, CorrelationData, SharedPreferences } from 'sunbird-sdk';
+import { AuditState, CorrelationData, SharedPreferences } from '@project-sunbird/sunbird-sdk';
 import { TagPrefixConstants } from '@app/services/segmentation-tag/segmentation-tag.service';
 import { OnboardingConfigurationService } from '@app/services';
 

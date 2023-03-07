@@ -7,7 +7,7 @@ import { ComingSoonMessageService } from '@app/services/coming-soon-message.serv
 import { PopoverController } from '@ionic/angular';
 import { Events } from '@app/util/events';
 import { SbGenericPopoverComponent } from '@app/app/components/popups/sb-generic-popover/sb-generic-popover.component';
-import { Content, TelemetryObject, Rollup, ContentStateResponse } from 'sunbird-sdk';
+import { Content, TelemetryObject, Rollup, ContentStateResponse } from '@project-sunbird/sunbird-sdk';
 import { Router, NavigationExtras } from '@angular/router';
 import { TextbookTocService } from '@app/app/collection-detail-etb/textbook-toc-service';
 import {

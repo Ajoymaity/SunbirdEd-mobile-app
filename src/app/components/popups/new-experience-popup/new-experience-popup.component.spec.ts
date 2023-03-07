@@ -1,6 +1,6 @@
 import { PopoverController, NavParams } from '@ionic/angular';
 import { NewExperiencePopupComponent } from './new-experience-popup.component';
-import { SharedPreferences } from 'sunbird-sdk';
+import { SharedPreferences } from '@project-sunbird/sunbird-sdk';
 import { Events } from '@app/util/events';
 import { TelemetryGeneratorService, CommonUtilService, InteractSubtype, PageId } from '../../../../services';
 import { of } from 'rxjs';

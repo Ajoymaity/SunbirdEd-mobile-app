@@ -17,7 +17,7 @@ import {
 import {
   TelemetryObject, ContentDetailRequest,
   ContentService
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import {
   ShareUrl, ShareMode, MimeType
 } from '@app/app/app.constant';

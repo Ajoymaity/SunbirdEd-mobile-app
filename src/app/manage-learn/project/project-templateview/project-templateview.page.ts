@@ -16,7 +16,7 @@ import { Subscription } from 'rxjs';
 
 import {
   SharedPreferences
-} from 'sunbird-sdk';
+} from '@project-sunbird/sunbird-sdk';
 import { ProfileNameConfirmationPopoverComponent } from '@app/app/components/popups/sb-profile-name-confirmation-popup/sb-profile-name-confirmation-popup.component';
 import { Location } from '@angular/common';
 @Component({

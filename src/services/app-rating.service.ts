@@ -1,5 +1,5 @@
 import { Injectable, Inject } from '@angular/core';
-import { SharedPreferences } from 'sunbird-sdk';
+import { SharedPreferences } from '@project-sunbird/sunbird-sdk';
 import { PreferenceKey, StoreRating } from '../app/app.constant';
 import { File } from '@ionic-native/file/ngx';
 
