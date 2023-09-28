@@ -2,8 +2,6 @@ package org.sunbird;
 
 import androidx.multidex.MultiDexApplication;
 
-import com.crashlytics.android.Crashlytics;
-
 import org.sunbird.config.BuildConfigUtil;
 
 /**
@@ -15,12 +13,5 @@ public class SunbirdApplication extends MultiDexApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        initCrashlytics();
-    }
-
-    private void initCrashlytics() {
-        // if (BuildConfigUtil.getBuildConfigValue(PACKAGE_NAME, "USE_CRASHLYTICS")) {
-        //     Fabric.with(this, new Crashlytics());
-        // }
     }
 }
