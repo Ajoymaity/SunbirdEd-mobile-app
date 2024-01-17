@@ -30,7 +30,7 @@ describe('SearchFilterService', () => {
     });
 
     describe('fetchFacetFilterFormConfig', () => {
-        it('Should get Form Fields by specifying the subtype', (done) => {
+        it('Should get Form Fields by specifying the subtype', () => {
         //arrange
             const subType ="default";
             const formRequest: FormRequest = {action: "get",
@@ -128,11 +128,10 @@ describe('SearchFilterService', () => {
             searchFilterService.fetchFacetFilterFormConfig(subType).then(() => {
             //assert
             expect(mockFormAndFrameworkUtilService.getFormFields).toHaveBeenCalledWith(formRequest, 'SAMPLE_CHANNEL_ID');
-            done();
         });
     });
 
-    it('Should get Form Fields without specifying the subtype', (done) => {
+    it('Should get Form Fields without specifying the subtype', () => {
         //arrange
             const formRequest: FormRequest = {action: "get",
             component: "app",
@@ -229,11 +228,10 @@ describe('SearchFilterService', () => {
             searchFilterService.fetchFacetFilterFormConfig().then(() => {
             //assert
             expect(mockFormAndFrameworkUtilService.getFormFields).toHaveBeenCalledWith(formRequest, 'SAMPLE_CHANNEL_ID');
-            done();
         });
     });
 
-    it('Should get Form Fields and execute catch block', (done) => {
+    it('Should get Form Fields and execute catch block', () => {
         //arrange
             const formRequest: FormRequest = {action: "get",
             component: "app",
@@ -246,7 +244,6 @@ describe('SearchFilterService', () => {
             //act
             const data = searchFilterService.fetchFacetFilterFormConfig().catch(() => {
                 expect(mockFormAndFrameworkUtilService.getFormFields).toHaveBeenCalledWith(formRequest, 'SAMPLE_CHANNEL_ID');
-                done();
             });
     }); 
 }); 

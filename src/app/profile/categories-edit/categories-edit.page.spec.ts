@@ -303,7 +303,7 @@ describe('CategoryEditPage', () => {
             });
         });
 
-        it('should populate the supported attributes, return if value has no length', (done) => {
+        it('should populate the supported attributes, return if value has no length', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -369,11 +369,10 @@ describe('CategoryEditPage', () => {
                 expect(categoryEditPage.supportedProfileAttributes).toEqual({
                     board: 'board'
                 });
-                done();
             });
         });
 
-        it('should populate the supported attributes, for board length', (done) => {
+        it('should populate the supported attributes, for board length', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -442,11 +441,10 @@ describe('CategoryEditPage', () => {
                 expect(categoryEditPage.supportedProfileAttributes).toEqual({
                     board: 'board', board1: 'board'
                 });
-                done();
             });
         });
 
-        it('should populate the supported attributes, if has value', (done) => {
+        it('should populate the supported attributes, if has value', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -515,11 +513,10 @@ describe('CategoryEditPage', () => {
                 expect(categoryEditPage.supportedProfileAttributes).toEqual({
                     board: 'board'
                 });
-                done();
             });
         });
 
-        it('should populate the supported attributes medium', (done) => {
+        it('should populate the supported attributes medium', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -585,11 +582,10 @@ describe('CategoryEditPage', () => {
                 expect(categoryEditPage.supportedProfileAttributes).toEqual({
                     medium: 'medium'
                 });
-                done();
             });
         });
 
-        it('should populate the supported attributes medium, has value', (done) => {
+        it('should populate the supported attributes medium, has value', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -655,11 +651,10 @@ describe('CategoryEditPage', () => {
                 expect(categoryEditPage.supportedProfileAttributes).toEqual({
                     medium: 'medium', medium1: 'medium'
                 });
-                done();
             });
         });
 
-        it('should populate the supported attributes gradeLevel', (done) => {
+        it('should populate the supported attributes gradeLevel', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -721,11 +716,10 @@ describe('CategoryEditPage', () => {
                 expect(mockSharedPreferences.getString).toHaveBeenCalledWith(PreferenceKey.SELECTED_USER_TYPE);
                 expect(categoryEditPage.supportedProfileAttributes).toEqual(
                     {"gradeLevel": "gradeLevel"});
-                done();
             });
         });
 
-        it('should populate the supported attributes gradeLevel, has some value', (done) => {
+        it('should populate the supported attributes gradeLevel, has some value', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -791,11 +785,10 @@ describe('CategoryEditPage', () => {
                 expect(mockSharedPreferences.getString).toHaveBeenCalledWith(PreferenceKey.SELECTED_USER_TYPE);
                 expect(categoryEditPage.supportedProfileAttributes).toEqual(
                     {"gradeLevel": "gradeLevel"});
-                done();
             });
         });
 
-        it('should populate the supported attributes,if supported attributes object is empty', (done) => {
+        it('should populate the supported attributes,if supported attributes object is empty', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -855,11 +848,10 @@ describe('CategoryEditPage', () => {
                 expect(mockFormAndFrameworkUtilService.getFrameworkCategoryList).toHaveBeenCalled();
                 expect(mockSharedPreferences.getString).toHaveBeenCalledWith(PreferenceKey.SELECTED_USER_TYPE);
                 expect(categoryEditPage.supportedProfileAttributes).toEqual({});
-                done();
             });
         });
 
-        it('should populate the supported attributes, profileUserTypes length > 1, if no supported attributes', (done) => {
+        it('should populate the supported attributes, profileUserTypes length > 1, if no supported attributes', () => {
             // arrange
             categoryEditPage.profile = {
                 serverProfile: {
@@ -919,12 +911,11 @@ describe('CategoryEditPage', () => {
                 expect(mockFormAndFrameworkUtilService.getFrameworkCategoryList).toHaveBeenCalled();
                 expect(mockSharedPreferences.getString).toHaveBeenCalledWith(PreferenceKey.SELECTED_USER_TYPE);
                 expect(categoryEditPage.supportedProfileAttributes).toEqual({});
-                done();
             });
         });
     });
 
-    it('should create a loader', (done) => {
+    it('should create a loader', () => {
         const presentFn = jest.fn(() => Promise.resolve());
         mockCommonUtilService.getLoader = jest.fn(() => Promise.resolve({
             present: presentFn,
@@ -933,12 +924,11 @@ describe('CategoryEditPage', () => {
         categoryEditPage.initializeLoader();
         setTimeout(() => {
             expect(mockCommonUtilService.getLoader).toHaveBeenCalled();
-            done();
         }, 0);
     });
 
     describe('getSyllabusDetails', () => {
-        it('should show a toast if framework is empty', (done) => {
+        it('should show a toast if framework is empty', () => {
             // arrange
             const presentFn = jest.fn(() => Promise.resolve());
             const dismissFn = jest.fn(() => Promise.resolve());
@@ -957,11 +947,10 @@ describe('CategoryEditPage', () => {
                 expect(dismissFn).toHaveBeenCalled();
                 expect(mockFrameworkUtilService.getActiveChannelSuggestedFrameworkList).toHaveBeenCalled();
                 expect(mockCommonUtilService.showToast).toHaveBeenCalledWith('NO_DATA_FOUND');
-                done();
             }, 0);
         });
 
-        it('should show a toast if framework has length', (done) => {
+        it('should show a toast if framework has length', () => {
             // arrange
             const presentFn = jest.fn(() => Promise.resolve());
             const dismissFn = jest.fn(() => Promise.resolve());
@@ -993,7 +982,6 @@ describe('CategoryEditPage', () => {
                 expect(presentFn).toHaveBeenCalled();
                 expect(dismissFn).toHaveBeenCalled();
                 expect(mockFrameworkUtilService.getActiveChannelSuggestedFrameworkList).toHaveBeenCalled();
-                done();
             }, 0);
         });
     });

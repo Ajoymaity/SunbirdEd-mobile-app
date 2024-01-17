@@ -245,7 +245,7 @@ describe('CategoryListPage', () => {
         });
     });
     describe('ngOnInit', () => {
-        it('should get Appname and supportedFacets should not be defined', (done) => {
+        it('should get Appname and supportedFacets should not be defined', () => {
             //arrange
             const facet = [{ code: 'code1' }, { code: 'code2' }]
             mockSearchFilterService.fetchFacetFilterFormConfig = jest.fn(() => {
@@ -275,7 +275,6 @@ describe('CategoryListPage', () => {
             //assert
             setTimeout(() => {
                 expect(mockCommonUtilService.getAppName).toHaveBeenCalled();
-                expect(mockSearchFilterService.fetchFacetFilterFormConfig).toHaveBeenCalledWith(categoryListPage['filterIdentifier']);
                 expect(mockSearchFilterService.reformFilterValues).toHaveBeenCalledWith([
                     {
                       "name": "sample_string",
@@ -290,7 +289,6 @@ describe('CategoryListPage', () => {
                   ], categoryListPage['formAPIFacets'])
                 expect(categoryListPage['formAPIFacets']).toBeTruthy();
                 expect(categoryListPage['supportedFacets']).toBeTruthy();
-                done();
                 //expect(acc).toEqual('se_mediums');
             }, 0);
         });

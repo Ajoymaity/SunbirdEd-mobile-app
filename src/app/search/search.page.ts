@@ -258,6 +258,8 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
     }
     this.handleDeviceBackButton();
     let frameworkCategory = this.appGlobalService.getCachedFrameworkCategory();
+
+    if (frameworkCategory && frameworkCategory.id) {
     this.getCategoriesKeyForContent(frameworkCategory.id);
     const rootOrgId = this.onboardingConfigurationService.getAppConfig().overriddenDefaultChannelId || '*';
     this.searchFilterConfig = await this.formAndFrameworkUtilService.getFrameworkCategoryList(frameworkCategory.id, {...FormConstants.SEARCH_FILTER, framework: frameworkCategory.id, rootOrgId: rootOrgId});
@@ -266,6 +268,10 @@ export class SearchPage implements OnInit, AfterViewInit, OnDestroy, OnTabViewWi
       await this.handleSearch(true);
     }
     this.selectedSwitchableTab = await this.preferences.getString(PreferenceKey.SELECTED_SWITCHABLE_TABS_CONFIG).toPromise()
+  }
+else {
+  console.log('frameworkCategory is undefined');     
+  }
   }
 
   async ionViewDidEnter() {

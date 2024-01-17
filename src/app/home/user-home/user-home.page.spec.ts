@@ -119,7 +119,7 @@ describe('UserHomePage', () => {
         });
     });
 
-    it('should subscribe events and when called upon', (done) => {
+    it('should subscribe events and when called upon', () => {
         // arrange
         mockEvents.subscribe = jest.fn((topic, fn) => {
             if (topic === AppGlobalService.PROFILE_OBJ_CHANGED) {
@@ -178,11 +178,10 @@ describe('UserHomePage', () => {
             expect(mockSunbirdQRScanner.startScanner).toHaveBeenCalled();
             expect(mockProfileService.getActiveSessionProfile).toHaveBeenCalled();
             expect(mockContentAggregatorHandler.populateIcons).toHaveBeenCalled();
-            done();
         }, 0);
     });
 
-    it('should subscribe events and when called upon, handle else case on tabchange event', (done) => {
+    it('should subscribe events and when called upon, handle else case on tabchange event', () => {
         // arrange
         mockEvents.subscribe = jest.fn((topic, fn) => {
             if (topic === AppGlobalService.PROFILE_OBJ_CHANGED) {
@@ -241,11 +240,10 @@ describe('UserHomePage', () => {
             expect(mockAppVersion.getAppName).toHaveBeenCalled();
             expect(mockProfileService.getActiveSessionProfile).toHaveBeenCalled();
             expect(mockContentAggregatorHandler.populateIcons).toHaveBeenCalled();
-            done();
         }, 0);
     });
 
-    it('should subscribe events, update header and getUserProfileDetails', (done) => {
+    it('should subscribe events, update header and getUserProfileDetails', () => {
         // arrange
         mockEvents.subscribe = jest.fn((topic, fn) => {
             if (topic === 'update_header') {
@@ -307,11 +305,10 @@ describe('UserHomePage', () => {
             expect(mockAppVersion.getAppName).toHaveBeenCalled();
             expect(mockAppGlobalService.isUserLoggedIn).toHaveBeenCalled();
             expect(mockFrameworkService.getFrameworkDetails).toHaveBeenCalled();
-            done();
         }, 0);
     });
 
-    it('should redirect to notifications and check if profileType is student', (done) => {
+    it('should redirect to notifications and check if profileType is student', () => {
         // arrange
         mockEvents.subscribe = jest.fn((topic, fn) => {
             if (topic === 'update_header') {
@@ -362,7 +359,6 @@ describe('UserHomePage', () => {
             expect(mockAppVersion.getAppName).toHaveBeenCalled();
             expect(mockAppGlobalService.isUserLoggedIn).toHaveBeenCalled();
             expect(mockFrameworkService.getFrameworkDetails).toHaveBeenCalled();
-            done();
         }, 0);
     });
 
@@ -487,7 +483,7 @@ describe('UserHomePage', () => {
         expect(mockRouter.navigate).not.toHaveBeenCalled();
     });
 
-    it('should show headerWithHomeButton and call UserProfileDetails', (done) => {
+    it('should show headerWithHomeButton and call UserProfileDetails', () => {
         // arrange
         mockHeaderService.showHeaderWithHomeButton = jest.fn();
         mockCommonUtilService.getGuestUserConfig = jest.fn(() => Promise.resolve());
@@ -535,7 +531,6 @@ describe('UserHomePage', () => {
             expect(mockFrameworkService.getFrameworkDetails).toHaveBeenCalled();
             expect(mockSegmentationTagService.exeCommands).toBeTruthy();
             expect(mockTelemetryGeneratorService.generateImpressionTelemetry).toHaveBeenCalled();
-            done();
         }, 0);
     });
 

@@ -45,7 +45,8 @@ describe('SearchPage', () => {
         isUserLoggedIn: jest.fn(() => true),
         getCurrentUser: jest.fn(() => { }),
         getProfileSettingsStatus: jest.fn(),
-        setOnBoardingCompleted: jest.fn()
+        setOnBoardingCompleted: jest.fn(),
+        getCachedFrameworkCategory: jest.fn(() => {})
     };
     const dismissFn = jest.fn(() => Promise.resolve());
     const presentFn = jest.fn(() => Promise.resolve());
@@ -3280,9 +3281,9 @@ describe('SearchPage', () => {
             jest.spyOn(searchPage, 'enableHeaderEvents').mockImplementation();
             mockHeaderService.headerEventEmitted$ = {
                 subscribe: jest.fn((fn => fn({ name: 'notification' })))}
-            mockHeaderService.showHeaderWithHomeButton = jest.fn()
+            mockHeaderService.showHeaderWithHomeButton = jest.fn();
             mockFormAndFrameworkUtilService.getFormFields = jest.fn();
-            mockSharedPreferences.getString = jest.fn(() => of())
+            mockSharedPreferences.getString = jest.fn(() => of());
             jest.spyOn(searchPage, 'handleSearch').mockImplementation();
             // act
             searchPage.ionViewWillEnter();

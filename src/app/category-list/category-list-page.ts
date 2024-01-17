@@ -586,9 +586,14 @@ export class CategoryListPage implements OnInit, OnDestroy {
     }
 
     async getContentDetailsFrameworkCategory() {
+        if(this.frameworkId) {
         await this.formAndFrameworkUtilService.getContentFrameworkCategory(this.frameworkId).then((data) => {
             this.categoriesList = data;
             this.categoriesList.push({code: 'lastPublishedBy', name: 'Published by'})
         });
+    }
+        else {
+            console.log('frameworkId is undefined');         
+        }
     }
 }

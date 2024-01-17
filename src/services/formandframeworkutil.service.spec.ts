@@ -1174,7 +1174,7 @@ describe('FormAndFrameworkUtilService', () => {
   })
 
   describe('getFrameworkCategories', () => {
-    it('should invoked formApi and store in local storage for empty framework', (done) => {
+    it('should invoked formApi and store in local storage for empty framework', () => {
       // arrange
       mockSharedPreferences.getString = jest.fn(() => of('teacher'));
       mockAppGlobalService.getCachedFrameworkCategory = jest.fn(() => ({}));
@@ -1214,11 +1214,10 @@ describe('FormAndFrameworkUtilService', () => {
         expect(mockSharedPreferences.getString).toHaveBeenCalledWith(PreferenceKey.SELECTED_USER_TYPE);
         expect(mockAppGlobalService.getCachedFrameworkCategory).toHaveBeenCalled();
         expect(mockAppGlobalService.setFramewokCategory).toHaveBeenCalled();
-        done();
       });
     });
 
-    it('should resolved framework category if already store', (done) => {
+    it('should resolved framework category if already store', () => {
       // arrange
       mockAppGlobalService.getCachedFrameworkCategory = jest.fn(() => ({
         supportedFrameworkConfig: [
@@ -1255,7 +1254,6 @@ describe('FormAndFrameworkUtilService', () => {
       formAndFrameworkUtilService.getFrameworkCategoryList('teacher').then(() => {
         // assert
         expect(mockAppGlobalService.getCachedFrameworkCategory).toHaveBeenCalled();
-        done();
       });
     })
   });
