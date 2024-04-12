@@ -1463,7 +1463,7 @@ describe('PlayerPage', () => {
 
         it('should unsubscribe backButtonSubscription', () => {
             // arrange
-            mockStatusBar.show = jest.fn();
+            mockStatusBar.show = jest.fn()
             mockSharedPreferences.getString = jest.fn(() => of("Landscape"));
             mockScreenOrientation.unlock = jest.fn();
             playerPage['events'] = undefined as any;
